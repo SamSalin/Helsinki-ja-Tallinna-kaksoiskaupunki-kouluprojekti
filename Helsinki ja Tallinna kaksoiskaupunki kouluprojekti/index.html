@@ -10,6 +10,7 @@
         margin: -10px;
         overflow: hidden;
     }
+
     .videoContainer {
         position: relative;
         padding-bottom: 56.25%;
@@ -29,6 +30,7 @@
         -ms-filter: blur(5px);
         filter: blur(5px);
     }
+
     #Helsinki-Tallinna {
         position: absolute;
         top: 25%;
@@ -36,18 +38,39 @@
         right: 0;
         margin: auto;
     }
+
+    #tallinna-vaakuna {
+        position: absolute;
+        width: 20%;
+        height: auto;
+        top: 45%;
+        left: 50%;
+        margin: auto;
+    }
+
+    #helsinki-vaakuna {
+        position: absolute;
+        width: 20%;
+        height: auto;
+        top: 50%;
+        left: 25%;
+        margin: auto;
+    }
 </style>
 <body onLoad="window.scroll(0, 150)">
 <div class="videoContainer">
     <iframe class="videoContainer__video" width="1920" height="1080"
-            src="http://www.youtube.com/embed/ACkvBCFHtDc?modestbranding=1&start=25&autoplay=1&controls=0&fs=0&loop=1&rel=0&showinfo=0&disablekb=1&mute=1&playlist=ACkvBCFHtDc" frameborder="0"></iframe>
+            src="http://www.youtube.com/embed/ACkvBCFHtDc?modestbranding=1&start=25&autoplay=1&controls=0&fs=0&loop=1&rel=0&showinfo=0&disablekb=1&mute=1&playlist=ACkvBCFHtDc"
+            frameborder="0"></iframe>
     <div class="welcome-text">
         <img id="Helsinki-Tallinna" src="images/yhteistyo-pieni.png" width="40%" height="auto"
              alt="Kaupunkien välinen yhteistyö"/>
     </div>
     <div id="city-choice">
-        <a href="valikko-helsinki.html"><img src="images/helsinki_vaakuna.png" alt="Helsingin vaakuna"/>></a>
-        <a href="valikko-helsinki.html"><img src="images/tallinna_vaakuna.png" alt="Tallinnan vaakuna"/></a>
+        <a href="valikko-helsinki.html"><img id="helsinki-vaakuna" src="images/helsinki_vaakuna.png"
+                                                                   alt="Helsingin vaakuna"/>></a>
+        <a
+           href="valikko-tallinna.html"><img id="tallinna-vaakuna" src="images/tallinna_vaakuna.png" alt="Tallinnan vaakuna"/></a>
     </div>
 </div>
 </body>
