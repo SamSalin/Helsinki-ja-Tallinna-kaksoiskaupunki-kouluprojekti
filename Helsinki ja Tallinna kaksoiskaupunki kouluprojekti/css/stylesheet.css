@@ -18,6 +18,12 @@ h2 {
     text-align: center;
 }
 
+/*SIVUMENU*/
+
+#mySidenav a {
+    white-space: nowrap;
+}
+
 /*NELIÖVALIKKO*/
 
 .flexboxmenu {
