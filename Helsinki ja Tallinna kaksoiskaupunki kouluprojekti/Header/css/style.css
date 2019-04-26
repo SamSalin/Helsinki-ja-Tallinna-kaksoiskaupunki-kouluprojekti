@@ -1,0 +1,47 @@
+header {
+    background-color: greenyellow;
+    width: 100%;
+    height: 200px;
+    min-width: 800px;
+    position: relative;
+    padding: 5px;
+}
+#otsikko {
+    float: left;
+    font-family: 'Raleway', sans-serif;
+    font-size: large;
+    margin-top: 40px;
+    position: static;
+}
+
+#kello {
+    margin-top: 0;
+    float: left;
+    position: fixed;
+    font-size: x-large;
+}
+#saa {
+    position: fixed;
+}
+
+.logot {
+    margin-left: 2%;
+    position: static;
+    float: right;
+
+}
+#logo1 {
+    margin-right: 4%;
+
+}
+#logo2 {
+    float: right;
+}
+
+p {
+    font-family: 'Raleway', sans-serif;
+}
+#saa {
+    position: static;
+    float: right;
+}
