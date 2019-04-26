@@ -69,7 +69,7 @@ header {
 #kello {
     margin-top: 0;
     float: left;
-    position: fixed;
+    position: absolute;
     font-size: x-large;
 }
 #saa {
