@@ -4,7 +4,46 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
-<p>Helsinki is saved. All heil our new overlord Turku!</p>
+<style>
+    body {
+        margin: -10px;
+        overflow: hidden;
+    }
+    .videoContainer {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 30px;
+        height: 0;
+    }
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 120%;
+        height: 120%;
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: blur(5px);
+    }
+    #Helsinki-Tallinna {
+        position: absolute;
+        top: 25%;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+</style>
+<body onLoad="window.scroll(0, 150)">
+<div class="videoContainer">
+    <iframe class="videoContainer__video" width="1920" height="1080"
+            src="http://www.youtube.com/embed/ACkvBCFHtDc?modestbranding=1&start=25&autoplay=1&controls=0&fs=0&loop=1&rel=0&showinfo=0&disablekb=1&mute=1&playlist=ACkvBCFHtDc" frameborder="0"></iframe>
+    <div class="welcome-text">
+        <img id="Helsinki-Tallinna" src="images/yhteistyo-pieni.png" width="40%" height="auto"
+             alt="Kaupunkien välinen yhteistyö"/>
+    </div>
+</div>
 </body>
 </html>
