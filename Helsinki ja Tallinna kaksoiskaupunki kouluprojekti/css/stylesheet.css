@@ -1,0 +1,67 @@
+/*YLEINEN*/
+
+body {
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.welcome-text p {
+    text-align: center;
+}
+
+/*NELIÖVALIKKO*/
+
+.flexboxmenu {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.menuitem {
+    width: 300px;
+    height: 300px;
+    margin: 50px;
+    background-color: white;
+    text-align: center;
+}
+
+.menutext {
+    position: relative;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/*FOOTER*/
+
+footer {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background-color: #70ffc8;
+}
+
+#copyright {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+    font-size: 30px;
+}
+
+#tekijät {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
