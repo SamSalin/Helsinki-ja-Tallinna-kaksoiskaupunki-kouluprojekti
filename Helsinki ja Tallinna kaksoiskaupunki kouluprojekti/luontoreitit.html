@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helsinki - Matka pääkaupungin sykkeeseen</title>
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/menusheet.css" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin=""/>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <title>Luontoreitit</title>
+</head>
+<body>
+<header>
+    <div id="otsikko">
+        <h1>Helsinki ja Tallinna</h1>
+    </div>
+    <p id="kello">
+        <script src="js/kello.js"></script>
+    </p>
+    <p id="saa">
+        <script src="https://www.yr.no/place/Finland/Southern_Finland/Helsinki/external_box_stripe.js"></script>
+    <noscript><a href="https://www.yr.no/place/Finland/Southern_Finland/Helsinki/">yr.no: Forecast for Helsinki</a></noscript>
+    </p>
+    <a href="">
+        <img src="images/tallinn_logo.png" id="logo2" class="logot" height="75" width="">
+    </a>
+    <a href="">
+        <img src="images/helsinki_logo.png" id="logo1" class="logot" height="75" width="">
+    </a>
+</header>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">Etusivu</a>
+    <a href="#">Kartat</a>
+    <a href="#">Historia</a>
+    <a href="#">Tietoa Meistä</a>
+</div>
+<span style="font-size:30px;cursor:pointer;color:white" onclick="openNav()">&#9776; Valikko </span>
+<div id="esittely">
+    <h1>Helsingin ja Tallinnan luontoreitit</h1>
+    <p>Täältä löydät tietoa Helsingin ja Tallinnan tarjoamista ulkoilumahdollisuuksista luontoreittien muodossa. Voit vapaasti tutkia luontoreittejä interaktiivisesta kartasta ja suodattaa
+        valintoja.</p>
+</div>
+<div id="filter">
+    <p>Kaupunki</p>
+    <input type="checkbox" name="city1" value="Helsinki"> Helsinki<br>
+    <input type="checkbox" name="city2" value="Tallinna"> Tallinna<br>
+</div>
+<div id="mapid">
+
+</div>
+<div class="luontoreitit-container">
+    <ul>
+
+    </ul>
+</div>
+<script src="js/menuscript.js"></script>
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+        integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+        crossorigin=""></script>
+<script src="js/luontoreitit.js"></script>
+</body>
+</html>

@@ -124,3 +124,17 @@ footer {
     text-decoration: none;
     color: black;
 }
+
+/*LUONTOREITIT / KARTTA */
+
+#esittely {
+    text-align: center;
+}
+
+#mapid {
+    height: 800px;
+    width: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
