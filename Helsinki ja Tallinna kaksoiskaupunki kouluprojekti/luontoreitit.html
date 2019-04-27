@@ -41,20 +41,24 @@
 <span style="font-size:30px;cursor:pointer;color:white" onclick="openNav()">&#9776; Valikko </span>
 <div id="esittely">
     <h1>Helsingin ja Tallinnan luontoreitit</h1>
-    <p>Täältä löydät tietoa Helsingin ja Tallinnan tarjoamista ulkoilumahdollisuuksista luontoreittien muodossa. Voit vapaasti tutkia luontoreittejä interaktiivisesta kartasta ja suodattaa
+    <p style="margin-bottom: 50px">Täältä löydät tietoa Helsingin ja Tallinnan tarjoamista ulkoilumahdollisuuksista luontoreittien muodossa. Voit vapaasti tutkia luontoreittejä interaktiivisesta
+        kartasta ja suodattaa
         valintoja.</p>
 </div>
-<div id="filter">
-    <p>Kaupunki</p>
-    <input type="checkbox" name="city1" value="Helsinki"> Helsinki<br>
-    <input type="checkbox" name="city2" value="Tallinna"> Tallinna<br>
+<div id="kartta-ja-valinnat">
+    <div id="mapid"></div>
+    <div id="map-filter">
+        <p><b>Kaupunki</b></p>
+        <input id="helsinki-nappi" type="checkbox" name="city1" value="Helsinki"> Helsinki
+        <input id="tallinna-nappi" type="checkbox" name="city2" value="Tallinna"> Tallinna
+        <button id="filter-button">Suodata</button>
+    </div>
 </div>
-<div id="mapid">
-
-</div>
-<div class="luontoreitit-container">
-    <ul>
-
+<div id="loydetyt-luontoreitit">
+    <h2>Löysimme antamienne kriteerien mukaan seuraavat luontoreitit:</h2>
+    <ul id="luontoreitti-lista-helsinki" style="float: left">
+    </ul>
+    <ul id="luontoreitti-lista-tallinna" style="float: right">
     </ul>
 </div>
 <script src="js/menuscript.js"></script>

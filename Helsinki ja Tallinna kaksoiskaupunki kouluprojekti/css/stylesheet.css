@@ -58,6 +58,7 @@ header {
     position: relative;
     padding: 5px;
 }
+
 #otsikko {
     float: left;
     font-family: 'Raleway', sans-serif;
@@ -72,6 +73,7 @@ header {
     position: absolute;
     font-size: x-large;
 }
+
 #saa {
     position: fixed;
 }
@@ -82,10 +84,12 @@ header {
     float: right;
 
 }
+
 #logo1 {
     margin-right: 4%;
 
 }
+
 #logo2 {
     float: right;
 }
@@ -127,14 +131,55 @@ footer {
 
 /*LUONTOREITIT / KARTTA */
 
+#kartta-ja-valinnat {
+    position: relative;
+}
+
 #esittely {
     text-align: center;
 }
 
 #mapid {
-    height: 800px;
+    height: 500px;
     width: 50%;
     left: 0;
     right: 0;
     margin: auto;
+}
+
+#map-filter {
+    text-align: left;
+    margin-left: 25%;
+}
+
+#map-filter input {
+    font-size: 25px;
+    text-align: right;
+}
+
+#filter-button {
+    margin: 10px;
+}
+
+#loydetyt-luontoreitit {
+    width: 700px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: none;
+}
+
+#loydetyt-luontoreitit h2 {
+    margin: 20px;
+    text-align: center;
+}
+
+#luontoreitti-lista-helsinki, #luontoreitti-lista-tallinna {
+    font-size: 20px;
+    text-align: center;
+    list-style-type: none;
+}
+
+#luontoreitti-lista-helsinki li, #luontoreitti-lista-tallinna li {
+    margin-top: 10px;
 }
