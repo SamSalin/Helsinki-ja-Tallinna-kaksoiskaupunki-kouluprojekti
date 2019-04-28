@@ -132,7 +132,7 @@ header {
 #logo1 {
     width: 13%;
     height: auto;
-    top:60px;
+    top: 60px;
     left: 0;
     right: 20%;
     margin: auto;
@@ -211,9 +211,8 @@ footer {
     font-size: 25px;
 }
 
-#map-filter input[type="text"]
-{
-    font-size:10px;
+#map-filter input[type="text"] {
+    font-size: 10px;
 }
 
 #filter-button {
