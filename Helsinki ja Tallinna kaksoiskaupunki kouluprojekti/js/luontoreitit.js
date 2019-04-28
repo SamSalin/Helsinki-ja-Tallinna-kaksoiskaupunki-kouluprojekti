@@ -8,6 +8,7 @@ let tallinnanLuontoreitit;
 
 let kartta = L.map('mapid').setView([59.831694, 24.847083], 9);
 let merkkiryhmä = L.featureGroup().addTo(kartta);
+let kartanKlikkaus = L.popup();
 
 document.getElementById('filter-button').
     addEventListener('click', suodataKaupungit);
@@ -56,24 +57,56 @@ function luoKartta() {
       }).addTo(kartta);
 }
 
+// Kun käyttäjä klikkaa kartaa, hän saa pienen ilmoituksen klikkaamastaan
+// kohdasta
+
+function onMapClick(e) {
+  kartanKlikkaus
+  .setLatLng(e.latlng)
+  .setContent("Klikkasit karttaa koordinaateista " + e.latlng.toString())
+  .openOn(kartta);
+}
+
+kartta.on('click', onMapClick);
+
+// Jos käyttäjän sijainnin haku onnistuu
+
 function sijaintiSuccess(position) {
   let longitude = position.coords.longitude;
   let latitude = position.coords.latitude;
 
   luoKartta();
 
+  //Custom-ikoni käytäjän sijainnille
+
+  let customTalo = L.icon({
+    iconUrl: 'images/talo-ikoni.png',
+
+    iconSize: [30, 30], // size of the icon
+    iconAnchor: [15, 5], // point of the icon which will correspond to
+    // marker's location
+    popupAnchor: [0, 0], // point from which the popup should open
+    // relative to the iconAnchor
+  });
+
   // Lisätään käyttäjän sijainti kartalle
 
-  L.marker([latitude, longitude]).
+  L.marker([latitude, longitude], {icon: customTalo}).
       addTo(kartta).
       bindPopup('<b>Olet täällä!</b><br>Sijaintisi kartalla.').
       openPopup();
 }
 
+// Jos sijainnin haku epäonnistuu
+
 function sijaintiFail() {
   luoKartta();
   alert('Käyttäjän sijaintia ei voitu määrittää!');
 }
+
+/*
+Määritellään minkä kaupungin luontoreiteistä käyttäjä haluaa tietoa
+ */
 
 function suodataKaupungit() {
   document.getElementById('luontoreitti-lista-helsinki').innerHTML = '';
@@ -101,37 +134,73 @@ function suodataKaupungit() {
   }
 }
 
+// Tulostetaan Helsingin kaupungin luontoreiteistä lista
+
 function tulostaHelsinginLuontoreitit() {
+
+  let otsikko = document.getElementById('luontoreitti-lista-helsinki');
+  let li = document.createElement('li');
+  li.id = 'Otsikko-Helsinki';
+  li.style.fontWeight = 'bold';
+  li.style.textDecoration = 'underline';
+  let text = document.createTextNode('Helsinki');
+  li.appendChild(text);
+  otsikko.appendChild(li);
 
   for (let i = 0; i < helsinginLuontoreitit.length; i++) {
     let reitti = document.getElementById('luontoreitti-lista-helsinki');
     let li = document.createElement('li');
+    let a = document.createElement('a');
+
+    a.href = '#esittely';
     li.id = 'Helsinki-' + i;
     let text = document.createTextNode(helsinginLuontoreitit[i].title);
-    li.appendChild(text);
+    a.appendChild(text);
+    li.appendChild(a);
     reitti.appendChild(li);
+
     li.addEventListener('click', function() {
       lisaaLuontoReittiHelsinki(i);
     });
   }
 }
 
+// Tulostetaan Tallinnan kaupungin luontoreiteistä lista
+
 function tulostaTallinnanLuontoreitit() {
+
+  let otsikko = document.getElementById('luontoreitti-lista-tallinna');
+  let li = document.createElement('li');
+  li.id = 'Otsikko-Tallinna';
+  li.style.fontWeight = 'bold';
+  li.style.textDecoration = 'underline';
+  let text = document.createTextNode('Tallinna');
+  li.appendChild(text);
+  otsikko.appendChild(li);
 
   for (let i = 0; i < tallinnanLuontoreitit.length; i++) {
     let reitti = document.getElementById('luontoreitti-lista-tallinna');
     let li = document.createElement('li');
+    let a = document.createElement('a');
+
+    a.href = '#esittely';
     li.id = 'Tallinna-' + i;
     let text = document.createTextNode(tallinnanLuontoreitit[i].title);
-    li.appendChild(text);
+    a.appendChild(text);
+    li.appendChild(a);
     reitti.appendChild(li);
+
     li.addEventListener('click', function() {
       lisaaLuontoReittiTallinna(i);
     });
   }
 }
 
+// Lisätään valittuu Helsingin luontoreitti kartalle
+
 function lisaaLuontoReittiHelsinki(indeksi) {
+  let piilotaMarkkeritValittu = document.getElementById(
+      'piilota-nappi').checked;
 
   let vari = 0;
   merkkiryhmä.clearLayers();
@@ -174,6 +243,14 @@ function lisaaLuontoReittiHelsinki(indeksi) {
           'opacity': '1',
         };
         break;
+
+      default:
+        tyyli = {
+          'color': '#fff6f8',
+          'weight': '2',
+          'opacity': '1',
+        };
+        break;
     }
 
     vari++;
@@ -183,32 +260,43 @@ function lisaaLuontoReittiHelsinki(indeksi) {
     }).addTo(merkkiryhmä);
   }
 
-  for (let i = 0; i < helsinginLuontoreitit[indeksi].points.length; i++) {
+  if (piilotaMarkkeritValittu !== true) {
 
-    let lat = helsinginLuontoreitit[indeksi].points[i].locationPoint.lat;
-    let lng = helsinginLuontoreitit[indeksi].points[i].locationPoint.lng;
-    let info = helsinginLuontoreitit[indeksi].points[i].locationPoint.pointInfo;
+    for (let i = 0; i < helsinginLuontoreitit[indeksi].points.length; i++) {
 
-    L.marker([lat, lng]).bindPopup(info).addTo(merkkiryhmä);
-    merkkiryhmä.addTo(kartta);
+      let lat = helsinginLuontoreitit[indeksi].points[i].locationPoint.lat;
+      let lng = helsinginLuontoreitit[indeksi].points[i].locationPoint.lng;
+      let info = helsinginLuontoreitit[indeksi].points[i].locationPoint.pointInfo;
 
+      L.marker([lat, lng]).bindPopup(info).addTo(merkkiryhmä);
+      merkkiryhmä.addTo(kartta);
+
+    }
   }
 
   kartta.fitBounds(merkkiryhmä.getBounds());
 }
 
+// Lisätään valittuu Tallinnan luontoreitti kartalle
+
 function lisaaLuontoReittiTallinna(indeksi) {
+
+  let piilotaMarkkeritValittu = document.getElementById(
+      'piilota-nappi').checked;
 
   merkkiryhmä.clearLayers();
 
-  for (let i = 0; i < tallinnanLuontoreitit[indeksi].points.length; i++) {
+  if (piilotaMarkkeritValittu !== true) {
 
-    let lat = tallinnanLuontoreitit[indeksi].points[i].locationPoint.lat;
-    let lng = tallinnanLuontoreitit[indeksi].points[i].locationPoint.lng;
-    let info = tallinnanLuontoreitit[indeksi].points[i].locationPoint.pointInfo;
+    for (let i = 0; i < tallinnanLuontoreitit[indeksi].points.length; i++) {
 
-    L.marker([lat, lng]).bindPopup(info).addTo(merkkiryhmä);
-    merkkiryhmä.addTo(kartta);
+      let lat = tallinnanLuontoreitit[indeksi].points[i].locationPoint.lat;
+      let lng = tallinnanLuontoreitit[indeksi].points[i].locationPoint.lng;
+      let info = tallinnanLuontoreitit[indeksi].points[i].locationPoint.pointInfo;
+
+      L.marker([lat, lng]).bindPopup(info).addTo(merkkiryhmä);
+      merkkiryhmä.addTo(kartta);
+    }
   }
 
   kartta.fitBounds(merkkiryhmä.getBounds());
