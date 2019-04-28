@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helsinki - Matka pääkaupungin sykkeeseen</title>
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/menusheet.css" type="text/css">
+    <link rel="stylesheet" href="css/slidersheet.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div id="otsikko">
+        <h1>Helsinki ja Tallinna</h1>
+    </div>
+    <p id="kello">
+        <script src="js/kello.js"></script>
+    </p>
+    <p id="saa">
+        <script src="https://www.yr.no/place/Finland/Southern_Finland/Helsinki/external_box_stripe.js"></script><noscript><a href="https://www.yr.no/place/Finland/Southern_Finland/Helsinki/">yr.no: Forecast for Helsinki</a></noscript>    </p>
+    <a href="">
+        <img src="images/tallinn_logo.png" id="logo2" class="logot" height="75" width="">
+    </a>
+    <a href="">
+        <img src="images/helsinki_logo.png" id="logo1" class="logot" height="75" width="">
+    </a>
+</header>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">Etusivu</a>
+    <a href="#">Kartat</a>
+    <a href="#">Historia</a>
+    <a href="#">Tietoa Meistä</a>
+</div>
+<span style="font-size:30px;cursor:pointer;color:white" onclick="openNav()">&#9776; Valikko </span>
+
+<h1>Historiaa kaupungeista</h1>
+<br>
+
+<!-- HISTORIA-SLIDERI -->
+<div class="slidecontainer">
+<input type="range" min="1" max="5" value="1" class="slider" id="history-slider">
+    <h2>Vuosi: <span id="slider-year"></span></h2>
+</div>
+
+<section id="history-texts">
+    <div class="history-text-item">
+        <h3>Helsinki</h3>
+        <a id="helsinki-slider-text"></a>
+    </div>
+    <div class="history-text-item">
+        <h3>Tallinna</h3>
+        <a id="tallinn-slider-text"></a>
+    </div>
+</section>
+<br><br><br>
+<div style="text-align: center">
+    <p>Lähteet: Wikipedia</p>
+    <a href="https://fi.wikipedia.org/wiki/Helsinki#Historia">Helsinki</a>
+    <a href="https://fi.wikipedia.org/wiki/Tallinna#Historia">Tallinna</a>
+</div>
+
+<footer>
+    <div class="footer">
+        <p id="copyright">CSS Miami Productions &#169; 2019</p>
+        <a id="tekijät" href="credits.html">Tekijät</a>
+    </div>
+</footer>
+<script src="js/menuscript.js"></script>
+<script src="js/slider.js"></script>
+</body>
+</html>
