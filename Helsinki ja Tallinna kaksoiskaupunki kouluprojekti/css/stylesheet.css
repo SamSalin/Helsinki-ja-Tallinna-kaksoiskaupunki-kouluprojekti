@@ -35,6 +35,10 @@ h2 {
     justify-content: center;
 }
 
+.flexboxmenu a {
+    text-decoration: none;
+}
+
 .menuitem {
     position: relative;
     width: 300px;
@@ -108,34 +112,39 @@ header {
 
 #kello {
     margin-top: 0;
-    float: left;
     position: absolute;
-    font-size: x-large;
+    font-size: 40px;
 }
 
 #saa {
-    position: fixed;
+    position: absolute;
+    width: fit-content;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 .logot {
-    margin-left: 2%;
-    position: static;
-    float: right;
+    position: absolute;
 
 }
 
 #logo1 {
-    margin-right: 4%;
-
+    width: 13%;
+    height: auto;
+    top:60px;
+    left: 0;
+    right: 20%;
+    margin: auto;
 }
 
 #logo2 {
-    float: right;
-}
-
-#saa {
-    position: static;
-    float: right;
+    width: 20%;
+    height: auto;
+    top: 60px;
+    left: 20%;
+    right: 0;
+    margin: auto;
 }
 
 /*FOOTER*/
@@ -195,20 +204,25 @@ footer {
 }
 
 #map-filter input {
-    font-size: 25px;
     text-align: right;
 }
 
+#map-filter p {
+    font-size: 25px;
+}
+
+#map-filter input[type="text"]
+{
+    font-size:10px;
+}
+
 #filter-button {
-    margin: 10px;
-}
-
-#luontoreitti-lista-tallinna {
-    float: right;
-}
-
-#luontoreitti-lista-helsinki {
-    float: left;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    margin: 20px;
+    background-color: lightskyblue;
+    color: black;
+    border: 2px solid #000000; /* Green */
 }
 
 #loydetyt-luontoreitit {
@@ -238,6 +252,7 @@ footer {
     font-size: 20px;
     text-align: center;
     list-style-type: none;
+    padding: 0;
 }
 
 #luontoreitti-lista-helsinki li, #luontoreitti-lista-tallinna li {

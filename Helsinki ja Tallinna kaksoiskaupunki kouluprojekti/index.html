@@ -20,6 +20,7 @@
 
     iframe {
         position: absolute;
+        pointer-events: none;
         top: 0;
         left: 0;
         width: 120%;
@@ -39,6 +40,7 @@
         left: 0;
         right: 50px;
         margin: auto;
+        z-index: 1;
     }
 
     #tallinna-vaakuna {
@@ -69,14 +71,12 @@
              alt="Kaupunkien välinen yhteistyö"/>
     </div>
     <div id="city-choice">
-        <a href="valikko-helsinki.html"><img id="helsinki-vaakuna" src="images/helsinki_vaakuna.png" alt="Helsingin vaakuna"/>></a>
+        <a href="valikko-helsinki.html"><img id="helsinki-vaakuna" src="images/vaakunat/helsinki_vaakuna.png" alt="Helsingin vaakuna"/>></a>
         <a
-                href="valikko-tallinna.html"><img id="tallinna-vaakuna" src="images/tallinna_vaakuna.png" alt="Tallinnan vaakuna"/></a>
-    </div>
-    <div id="barrier" style=" display: block ;width: 200%; height: 200%">
-        <p style="display: none; width: 200%; height: 200%"></p>
+                href="valikko-tallinna.html"><img id="tallinna-vaakuna" src="images/vaakunat/tallinna_vaakuna.png" alt="Tallinnan vaakuna"/></a>
     </div>
 </div>
+<script src="js/valikot.js"></script>
 <script src="js/index-page.js"></script>
 </body>
 </html>

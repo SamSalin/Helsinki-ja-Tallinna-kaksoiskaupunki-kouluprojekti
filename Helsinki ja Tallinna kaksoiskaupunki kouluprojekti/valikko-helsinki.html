@@ -10,31 +10,28 @@
 </head>
 <body>
 <header>
-    <div id="otsikko">
-        <h1>Helsinki ja Tallinna</h1>
-    </div>
     <p id="kello">
         <script src="js/kello.js"></script>
     </p>
-    <p id="saa">
+    <div id="saa">
         <script src="https://www.yr.no/place/Finland/Southern_Finland/Helsinki/external_box_stripe.js"></script>
-    <noscript><a href="https://www.yr.no/place/Finland/Southern_Finland/Helsinki/">yr.no: Forecast for Helsinki</a></noscript>
-    </p>
-    <a href="">
-        <img src="images/tallinn_logo.png" id="logo2" class="logot" height="75" width="">
+        <noscript><a href="https://www.yr.no/place/Finland/Southern_Finland/Helsinki/">yr.no: Forecast for Helsinki</a></noscript>
+    </div>
+    <a href="valikko-tallinna.html">
+        <img src="images/logot/tallinn_logo.png" id="logo2" class="logot" height="75" width="">
     </a>
-    <a href="">
-        <img src="images/helsinki_logo.png" id="logo1" class="logot" height="75" width="">
+    <a href="valikko-helsinki.html">
+        <img src="images/logot/helsinki_logo.png" id="logo1" class="logot" height="75" width="">
     </a>
 </header>
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="#">Etusivu</a>
-    <a href="#">Kartat</a>
-    <a href="#">Historia</a>
+    <a href="luontoreitit.html">Luontoreittikartta</a>
+    <a href="historia.html">Historia</a>
     <a href="#">Tietoa Meistä</a>
 </div>
-<span style="font-size:30px;cursor:pointer;color:white" onclick="openNav()">&#9776; Valikko </span>
+<span style="font-size:30px;cursor:pointer;color:white; margin-left: 5px" onclick="openNav()">&#9776; Valikko </span>
 <div class="welcome-text">
     <h1>Tervetuloa Helsinkiin!</h1>
     <p>Helsinki on kaupunki täynnä mahdollisuuksia ja uusia kokemuksia. Toivomme, että viihdyt yhdessä pohjoismaiden
@@ -42,59 +39,72 @@
 </div>
 
 <div class="flexboxmenu">
-    <div class="menuitem">
-        <div class="menu-kuva-blur">
-            <img src="images/helsinki-menu/ranta.jpg" alt="Kuva Helsingistä">
+    <a href="luontoreitit.html">
+        <div class="menuitem">
+            <div class="menu-kuva-blur">
+                <img src="images/helsinki-menu/ranta.jpg" alt="Kuva Helsingistä">
+            </div>
+            <div class="menu-teksti-div">
+                <h2 class="menutext">Luontoreitit</h2>
+            </div>
         </div>
-        <div class="menu-teksti-div">
-            <h2 class="menutext">Kartat</h2>
+    </a>
+    <a href="historia.html">
+        <div class="menuitem">
+            <div class="menu-kuva-mustavalko">
+                <img src="images/helsinki-menu/talo.jpg" alt="Kuva Helsingistä">
+            </div>
+            <div class="menu-teksti-div">
+                <h2 class="menutext">Historia</h2>
+            </div>
         </div>
-    </div>
-    <div class="menuitem">
-        <div class="menu-kuva-mustavalko">
-            <img src="images/helsinki-menu/talo.jpg" alt="Kuva Helsingistä">
+    </a>
+    <a href="#">
+        <div class="menuitem">
+            <div class="menu-kuva-blur">
+                <img src="images/helsinki-menu/kappeli.jpg" alt="Kuva Helsingistä">
+            </div>
+            <div class="menu-teksti-div">
+                <h2 class="menutext">Kuvagalleria</h2>
+            </div>
         </div>
-        <div class="menu-teksti-div">
-            <h2 class="menutext">Kulttuuri</h2>
+    </a>
+    <a href="#">
+        <div class="menuitem">
+            <div class="menu-kuva-mustavalko">
+                <img src="images/helsinki-menu/lintu.jpg" alt="Kuva Helsingistä">
+            </div>
+            <div class="menu-teksti-div">
+                <h2 class="menutext">Mahdollinen APIna</h2>
+            </div>
         </div>
-    </div>
-    <div class="menuitem">
-        <div class="menu-kuva-blur">
-            <img src="images/helsinki-menu/kappeli.jpg" alt="Kuva Helsingistä">
+    </a>
+    <a href="#">
+        <div class="menuitem">
+            <div class="menu-kuva-blur">
+                <img src="images/helsinki-menu/katujuna.jpg" alt="Kuva Helsingistä">
+            </div>
+            <div class="menu-teksti-div">
+                <h2 class="menutext">Kulttuuri</h2>
+            </div>
         </div>
-        <div class="menu-teksti-div">
-            <h2 class="menutext">Kuvagalleria</h2>
+    </a>
+    <a href="#">
+        <div class="menuitem">
+            <div class="menu-kuva-mustavalko">
+                <img src="images/helsinki-menu/kello.jpg" alt="Kuva Helsingistä">
+            </div>
+            <div class="menu-teksti-div">
+                <h2 class="menutext">Tietoa meistä</h2>
+            </div>
         </div>
-    </div>
-    <div class="menuitem">
-        <div class="menu-kuva-mustavalko">
-            <img src="images/helsinki-menu/lintu.jpg" alt="Kuva Helsingistä">
-        </div>
-        <div class="menu-teksti-div">
-            <h2 class="menutext">Mahdollinen APIna</h2>
-        </div>
-    </div>
-    <div class="menuitem">
-        <div class="menu-kuva-blur">
-            <img src="images/helsinki-menu/katujuna.jpg" alt="Kuva Helsingistä">
-        </div>
-        <div class="menu-teksti-div">
-            <h2 class="menutext">Luontoreitit</h2>
-        </div>
-    </div>
-    <div class="menuitem">
-        <div class="menu-kuva-mustavalko">
-            <img src="images/helsinki-menu/kello.jpg" alt="Kuva Helsingistä">
-        </div>
-        <div class="menu-teksti-div">
-            <h2 class="menutext">Tietoa meistä</h2>
-        </div>
-    </div>
+    </a>
 </div>
 <footer>
     <p id="copyright">CSS Miami Productions &#169; 2019</p>
     <a id="tekijät" href="credits.html">Tekijät</a>
 </footer>
+<script src="js/valikot.js"></script>
 <script src="js/menuscript.js"></script>
 </body>
 </html>

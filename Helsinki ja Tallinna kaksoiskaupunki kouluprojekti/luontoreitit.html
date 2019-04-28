@@ -14,31 +14,24 @@
 </head>
 <body>
 <header>
-    <div id="otsikko">
-        <h1>Helsinki ja Tallinna</h1>
-    </div>
     <p id="kello">
         <script src="js/kello.js"></script>
     </p>
-    <p id="saa">
-        <script src="https://www.yr.no/place/Finland/Southern_Finland/Helsinki/external_box_stripe.js"></script>
-    <noscript><a href="https://www.yr.no/place/Finland/Southern_Finland/Helsinki/">yr.no: Forecast for Helsinki</a></noscript>
-    </p>
-    <a href="">
-        <img src="images/tallinn_logo.png" id="logo2" class="logot" height="75" width="">
+    <a href="valikko-tallinna.html">
+        <img src="images/logot/tallinn_logo.png" id="logo2" class="logot" height="75" width="">
     </a>
-    <a href="">
-        <img src="images/helsinki_logo.png" id="logo1" class="logot" height="75" width="">
+    <a href="valikko-helsinki.html">
+        <img src="images/logot/helsinki_logo.png" id="logo1" class="logot" height="75" width="">
     </a>
 </header>
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="#">Etusivu</a>
-    <a href="#">Kartat</a>
-    <a href="#">Historia</a>
+    <a href="luontoreitit.html">Luontoreittikartta</a>
+    <a href="historia.html">Historia</a>
     <a href="#">Tietoa Meistä</a>
 </div>
-<span style="font-size:30px;cursor:pointer;color:white" onclick="openNav()">&#9776; Valikko </span>
+<span style="font-size:30px;cursor:pointer;color:white; margin-left: 5px" onclick="openNav()">&#9776; Valikko </span>
 <div id="esittely">
     <h1>Helsingin ja Tallinnan luontoreitit</h1>
     <p style="margin-bottom: 50px">Täältä löydät tietoa Helsingin ja Tallinnan tarjoamista ulkoilumahdollisuuksista luontoreittien muodossa. Voit vapaasti tutkia luontoreittejä interaktiivisesta
@@ -63,7 +56,7 @@
     </div>
 </div>
 <div id="loydetyt-luontoreitit">
-    <h2>Löysimme antamienne kriteerien mukaan seuraavat luontoreitit:</h2>
+    <h2 id="esittely-teksti">Löysimme antamienne kriteerien mukaan seuraavat luontoreitit:</h2>
     <ul id="luontoreitti-lista-helsinki">
 
     </ul>
@@ -75,6 +68,7 @@
 <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
         integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
         crossorigin=""></script>
+<script src="js/valikot.js"></script>
 <script src="js/luontoreitit.js"></script>
 </body>
 </html>

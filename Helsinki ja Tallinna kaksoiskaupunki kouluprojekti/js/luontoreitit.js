@@ -125,6 +125,9 @@ function suodataKaupungit() {
 
   if ((helsinkiNappiValittu === true) && (tallinnaNappiValittu === true)) {
 
+    document.getElementById('luontoreitti-lista-helsinki').style.cssFloat = 'left';
+    document.getElementById('luontoreitti-lista-tallinna').style.cssFloat = 'right';
+
     tulostaHelsinginLuontoreitit();
     tulostaTallinnanLuontoreitit();
 
@@ -132,6 +135,7 @@ function suodataKaupungit() {
       (tallinnaNappiValittu === false)) {
     document.getElementById('loydetyt-luontoreitit').style.display = 'none';
     alert('Et valinnut suodattimia!');
+    uusiHaku();
   } else if ((helsinkiNappiValittu === true) &&
       (tallinnaNappiValittu === false)) {
     tulostaHelsinginLuontoreitit();
@@ -307,9 +311,14 @@ function uusiHaku() {
   document.getElementById('map-filter-valinnat').style.display = 'block';
   hakuNappi.removeEventListener('click', uusiHaku);
   hakuNappi.addEventListener('click', suodataKaupungit);
-  hakuNappi.innerText = 'Suodata';
+  hakuNappi.innerText = 'Päivitä';
+
+  document.getElementById('luontoreitti-lista-helsinki').style.cssFloat = 'none';
+  document.getElementById('luontoreitti-lista-tallinna').style.cssFloat = 'none';
 
   merkkiryhmä.clearLayers();
+
+  document.getElementById('loydetyt-luontoreitit').style.display = 'none';
   document.getElementById('luontoreitti-lista-helsinki').innerHTML = '';
   document.getElementById('luontoreitti-lista-tallinna').innerHTML = '';
 }
