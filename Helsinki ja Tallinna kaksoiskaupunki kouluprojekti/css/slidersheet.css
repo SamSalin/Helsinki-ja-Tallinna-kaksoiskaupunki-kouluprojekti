@@ -41,7 +41,9 @@
     margin: 50px;
     background-color: lightgrey;
     text-align: center;
+    padding: 20px;
 }
+
 /*.slider::-moz-range-thumb {
     width: 25px;
     height: 25px;

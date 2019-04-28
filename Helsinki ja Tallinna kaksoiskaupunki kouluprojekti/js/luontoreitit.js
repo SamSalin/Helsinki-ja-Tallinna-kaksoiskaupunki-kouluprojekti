@@ -10,8 +10,11 @@ let kartta = L.map('mapid').setView([59.831694, 24.847083], 9);
 let merkkiryhmä = L.featureGroup().addTo(kartta);
 let kartanKlikkaus = L.popup();
 
-document.getElementById('filter-button').
-    addEventListener('click', suodataKaupungit);
+let hakuNappi = document.getElementById('filter-button');
+hakuNappi.addEventListener('click', suodataKaupungit);
+
+let tallinnaValittu = document.getElementById('tallinna-nappi');
+tallinnaValittu.addEventListener('click', piilotaValinta);
 
 // Haetaaan Helsingin luontoreitit
 
@@ -61,10 +64,9 @@ function luoKartta() {
 // kohdasta
 
 function onMapClick(e) {
-  kartanKlikkaus
-  .setLatLng(e.latlng)
-  .setContent("Klikkasit karttaa koordinaateista " + e.latlng.toString())
-  .openOn(kartta);
+  kartanKlikkaus.setLatLng(e.latlng).
+      setContent('Klikkasit karttaa koordinaateista ' + e.latlng.toString()).
+      openOn(kartta);
 }
 
 kartta.on('click', onMapClick);
@@ -109,6 +111,11 @@ Määritellään minkä kaupungin luontoreiteistä käyttäjä haluaa tietoa
  */
 
 function suodataKaupungit() {
+  document.getElementById('map-filter-valinnat').style.display = 'none';
+  hakuNappi.removeEventListener('click', suodataKaupungit);
+  hakuNappi.addEventListener('click', uusiHaku);
+  hakuNappi.innerText = 'Uusi haku';
+
   document.getElementById('luontoreitti-lista-helsinki').innerHTML = '';
   document.getElementById('luontoreitti-lista-tallinna').innerHTML = '';
   document.getElementById('loydetyt-luontoreitit').style.display = 'block';
@@ -281,23 +288,36 @@ function lisaaLuontoReittiHelsinki(indeksi) {
 
 function lisaaLuontoReittiTallinna(indeksi) {
 
-  let piilotaMarkkeritValittu = document.getElementById(
-      'piilota-nappi').checked;
-
   merkkiryhmä.clearLayers();
 
-  if (piilotaMarkkeritValittu !== true) {
+  for (let i = 0; i < tallinnanLuontoreitit[indeksi].points.length; i++) {
 
-    for (let i = 0; i < tallinnanLuontoreitit[indeksi].points.length; i++) {
+    let lat = tallinnanLuontoreitit[indeksi].points[i].locationPoint.lat;
+    let lng = tallinnanLuontoreitit[indeksi].points[i].locationPoint.lng;
+    let info = tallinnanLuontoreitit[indeksi].points[i].locationPoint.pointInfo;
 
-      let lat = tallinnanLuontoreitit[indeksi].points[i].locationPoint.lat;
-      let lng = tallinnanLuontoreitit[indeksi].points[i].locationPoint.lng;
-      let info = tallinnanLuontoreitit[indeksi].points[i].locationPoint.pointInfo;
-
-      L.marker([lat, lng]).bindPopup(info).addTo(merkkiryhmä);
-      merkkiryhmä.addTo(kartta);
-    }
+    L.marker([lat, lng]).bindPopup(info).addTo(merkkiryhmä);
+    merkkiryhmä.addTo(kartta);
   }
 
   kartta.fitBounds(merkkiryhmä.getBounds());
+}
+
+function uusiHaku() {
+  document.getElementById('map-filter-valinnat').style.display = 'block';
+  hakuNappi.removeEventListener('click', uusiHaku);
+  hakuNappi.addEventListener('click', suodataKaupungit);
+  hakuNappi.innerText = 'Suodata';
+
+  merkkiryhmä.clearLayers();
+  document.getElementById('luontoreitti-lista-helsinki').innerHTML = '';
+  document.getElementById('luontoreitti-lista-tallinna').innerHTML = '';
+}
+
+function piilotaValinta() {
+  if (tallinnaValittu.checked) {
+    document.getElementById('piilota-markkerit').style.display = 'none';
+  } else {
+    document.getElementById('piilota-markkerit').style.display = 'block';
+  }
 }

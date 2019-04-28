@@ -48,30 +48,29 @@
 <div id="kartta-ja-valinnat">
     <div id="mapid"></div>
     <div id="map-filter">
-        <p><b>Kaupunki</b></p>
-        <input id="helsinki-nappi" type="checkbox" name="city1" value="Helsinki"> Helsinki
-        <input id="tallinna-nappi" type="checkbox" name="city2" value="Tallinna"> Tallinna
-        <button id="filter-button">Suodata kaupungit</button>
-        <p><b>Piilota markkerit</b></p>
-        <input id="piilota-nappi" type="checkbox" name="hide-markers" value="Piilota"> Piilota markkerit
+        <div id="map-filter-valinnat">
+            <p><b>Kaupunki</b></p>
+            <input id="helsinki-nappi" type="checkbox" name="city1" value="Helsinki"> Helsinki
+            <input id="tallinna-nappi" type="checkbox" name="city2" value="Tallinna"> Tallinna
+            <div id="piilota-markkerit">
+                <p><b>Piilota markkerit</b></p>
+                <input id="piilota-nappi" type="checkbox" name="hide-markers" value="Piilota">Piilota markkerit<br/>
+            </div>
+        </div>
+        <div id="filter-button-container">
+            <button id="filter-button">Päivitä</button>
+        </div>
     </div>
 </div>
 <div id="loydetyt-luontoreitit">
     <h2>Löysimme antamienne kriteerien mukaan seuraavat luontoreitit:</h2>
-    <ul id="luontoreitti-lista-helsinki" style="float: left">
-        <li><b><u>Helsinki</u></b></li>
-    </ul>
-    <ul id="luontoreitti-lista-tallinna" style="float: right">
+    <ul id="luontoreitti-lista-helsinki">
 
-        <li><b><u>Tallinna</u></b></li>
+    </ul>
+    <ul id="luontoreitti-lista-tallinna">
+
     </ul>
 </div>
-<footer>
-    <div class="footer">
-        <p id="copyright">CSS Miami Productions &#169; 2019</p>
-        <a id="tekijät" href="credits.html">Tekijät</a>
-    </div>
-</footer>
 <script src="js/menuscript.js"></script>
 <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
         integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="

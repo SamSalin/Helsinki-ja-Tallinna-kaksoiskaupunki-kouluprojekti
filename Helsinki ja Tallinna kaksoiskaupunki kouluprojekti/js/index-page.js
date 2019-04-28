@@ -1,6 +1,5 @@
 'use strict';
 
-
 let helsinkiVaakunaImg = document.getElementById('helsinki-vaakuna');
 let tallinnaVaakunaImg = document.getElementById('tallinna-vaakuna');
 
