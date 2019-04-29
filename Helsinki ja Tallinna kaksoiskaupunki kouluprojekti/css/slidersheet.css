@@ -28,7 +28,7 @@
     cursor: pointer;
 }
 
-.history-texts {
+#history-texts {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -36,18 +36,14 @@
 }
 
 .history-text-item {
-    width: 700px;
-    height: 400px;
+    width: 500px;
+    height: 300px;
     margin: 50px;
     background-color: lightgrey;
     text-align: center;
-    font-size: 20px;
-    text-wrap: normal;
+    padding: 20px;
 }
 
-@media screen and (max-width: 550px) {
-    .history-text-item {font-size: 12px;}
-}
 /*.slider::-moz-range-thumb {
     width: 25px;
     height: 25px;
