@@ -375,10 +375,21 @@ footer {
 
 @media only screen and (max-width: 600px) {
 
-    /* HEADER */
+    #mobile {
+        display: block !important;
+        border-right: ;
+    }
 
+    #pc {
+        display: none !important;
+    }
+
+    /* HEADER */
     #kello {
+        position: relative;
+        text-align: center;
         font-size: 20px;
+        margin: auto;
     }
 
     header {
@@ -386,7 +397,7 @@ footer {
     }
 
     #header-image {
-        content:url("../images/header-img-mobiili.jpg");
+        content: url("../images/header-img-mobiili.jpg");
         display: block;
         margin: 0 auto;
     }
@@ -407,8 +418,11 @@ footer {
         margin: auto;
     }
 
-    /* FOOTER */
+    #saa {
+        display: none;
+    }
 
+    /* FOOTER */
     footer {
         margin-top: 50px;
     }
@@ -419,14 +433,12 @@ footer {
     }
 
     /* NELIÖMENU */
-
     .menuitem {
         margin-top: 25px;
         margin-bottom: 25px;
     }
 
     /* KARTTANÄKYMÄ */
-
     #mapid {
         height: 400px;
         width: 90%;
