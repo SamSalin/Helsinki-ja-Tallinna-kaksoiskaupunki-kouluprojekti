@@ -28,7 +28,7 @@
     cursor: pointer;
 }
 
-#history-texts {
+.history-texts {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
