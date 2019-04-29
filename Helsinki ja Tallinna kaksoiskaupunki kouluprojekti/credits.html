@@ -10,6 +10,7 @@
 </head>
 <style>
 
+
     #tekijat-otsikko {
         margin-bottom: 50px;
     }
@@ -17,6 +18,71 @@
     #leipateksti {
         text-align: center;
     }
+
+    #kuvat {
+        display: flex;
+        flex-flow: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #samuli-div {
+        position: relative;
+        width: 30%;
+        height: 600px;
+        background-color: white;
+    }
+
+    #samuli-kuva {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 40%;
+        margin: auto;
+        height: auto;
+    }
+
+    #emil-div {
+        position: relative;
+        width: 30%;
+        height: 600px;
+        background-color: deeppink;
+    }
+
+    #emil-kuva {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 50%;
+        margin: auto;
+        height: auto;
+    }
+
+    #kimmo-div {
+        position: relative;
+        width: 30%;
+        height: 600px;
+        background-color: greenyellow;
+    }
+
+    #kimmo-kuva {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 40%;
+        margin: auto;
+        height: auto;
+    }
+
+    .kuvateksti {
+        position: relative;
+        text-align: center;
+        bottom: 0;
+    }
+
 </style>
 <body>
 <header>
@@ -45,13 +111,19 @@
     <h2>Tämän sivuston ovat ylpeänä luoneet:</h2>
 </div>
 <div id="kuvat">
-    <img src="images/muotokuvat/emil.png" alt="Kuva ylijumalasta n. 1"/>
-    <img src="images/muotokuvat/samuli.png" alt="Kuva ylijumalasta n. 2"/>
+    <div id="samuli-div">
+        <img id="samuli-kuva" src="images/muotokuvat/samuli.png" alt="Kuva ylijumalasta n. 1"/>
+        <h2 class="kuvateksti">Ylijumala Samuli</h2>
+    </div>
+    <div id="emil-div">
+        <img id="emil-kuva" src="images/muotokuvat/emil.png" alt="Kuva ylijumalasta n. 2"/>
+        <h2 class="kuvateksti">Ylijumala Emil</h2>
+    </div>
+    <div id="kimmo-div">
+        <img id="kimmo-kuva" src="images/muotokuvat/kimmo.png" alt="Kuva ylijumalasta n. 3"/>
+        <h2 class="kuvateksti">Ylijumala Kimmo</h2>
+    </div>
 </div>
-<footer>
-    <p id="copyright">CSS Miami Productions &#169; 2019</p>
-    <a id="tekijät" href="credits.html">Tekijät</a>
-</footer>
 <script src="js/menuscript.js"></script>
 <script src="js/valikot.js"></script>
 </body>
