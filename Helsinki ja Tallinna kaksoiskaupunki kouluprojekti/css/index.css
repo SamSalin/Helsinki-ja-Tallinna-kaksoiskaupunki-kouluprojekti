@@ -26,7 +26,7 @@ iframe {
 
 #Helsinki-Tallinna {
     position: absolute;
-    width: 60%;
+    width: 40%;
     height: auto;
     top: 25%;
     left: 0;
@@ -51,4 +51,48 @@ iframe {
     top: 50%;
     left: 25%;
     margin: auto;
+}
+
+#mobiili-background {
+    display: none;
+}
+
+/* MOBIILIOPTIMOINTI */
+
+@media only screen and (max-width: 600px) {
+
+    .videoContainer__video {
+        display: none;
+    }
+
+    #mobiili-background {
+        display: block;
+    }
+
+    #Helsinki-Tallinna {
+        width: 90%;
+        position: absolute;
+        top: 200px;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    #helsinki-vaakuna {
+        width: 30%;
+        float: left;
+        top: 400px;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    #tallinna-vaakuna {
+        float: left;
+        width: 30%;
+        top: 650px;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
 }

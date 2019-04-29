@@ -124,7 +124,6 @@ function suodataKaupungit() {
   let tallinnaNappiValittu = document.getElementById('tallinna-nappi').checked;
 
   if ((helsinkiNappiValittu === true) && (tallinnaNappiValittu === true)) {
-
     document.getElementById(
         'luontoreitti-lista-helsinki').style.cssFloat = 'left';
     document.getElementById(

@@ -217,6 +217,7 @@ footer {
     left: 0;
     right: 0;
     margin: auto;
+    z-index: -1;
 }
 
 #map-filter {
@@ -374,4 +375,73 @@ footer {
 
 @media only screen and (max-width: 600px) {
 
+    /* HEADER */
+
+    #kello {
+        font-size: 20px;
+    }
+
+    header {
+        min-width: 200px;
+    }
+
+    #header-image {
+        content:url("../images/header-img-mobiili.jpg");
+        display: block;
+        margin: 0 auto;
+    }
+
+    #logo1 {
+        left: 0;
+        right: 0;
+        top: 55px;
+        width: 28%;
+        margin: 0 auto;
+    }
+
+    #logo2 {
+        left: 0;
+        right: 0;
+        top: 125px;
+        width: 35%;
+        margin: auto;
+    }
+
+    /* FOOTER */
+
+    footer {
+        margin-top: 50px;
+    }
+
+    #copyright {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    /* NELIÖMENU */
+
+    .menuitem {
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    /* KARTTANÄKYMÄ */
+
+    #mapid {
+        height: 400px;
+        width: 90%;
+    }
+
+    #map-filter {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    #loydetyt-luontoreitit {
+        width: 100%;
+    }
+
+    #luontoreitti-lista-helsinki, #luontoreitti-lista-tallinna {
+        float: none !important;
+    }
 }
