@@ -61,6 +61,10 @@ iframe {
 
 @media only screen and (max-width: 600px) {
 
+    body {
+        max-height: 1000px;
+    }
+
     .videoContainer__video {
         display: none;
     }
