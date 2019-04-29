@@ -38,15 +38,29 @@
 .history-text-item {
     width: 500px;
     height: 300px;
-    margin: 50px;
+    margin-top: 0;
+    padding-top: 0;
     background-color: lightgrey;
     text-align: center;
-    padding: 20px;
 }
 
-/*.slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    background: #4CAF50;
-    cursor: pointer;
-}*/
+#hist-img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    filter: blur(2px);
+    z-index: -1;
+    width: 800px;
+}
+
+#hist-references {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    text-align: center;
+    background-color: lightgrey;
+    width: 20%;
+}

@@ -1,6 +1,7 @@
 var slider = document.getElementById("history-slider");
 var output = document.getElementById("slider-year");
 var tal = document.getElementById("tallinn-slider-text");
+var img = document.getElementById('hist-img');
 
 let vuosi1 = "Perustusvuosi";
 let vuosi2 = "1700";
@@ -10,29 +11,33 @@ let vuosi5 = "2000";
 
 output.innerHTML = vuosi1;
 
-
 slider.oninput = function() {
   output.innerHTML = slider.value;
 
   if (slider.value == 1) {
     output.innerHTML = vuosi1;
     tal.innerHTML = tt1;
+    img.src = 'images/talHist/talHistImg2.jpg';
   }
   if (slider.value == 2) {
     output.innerHTML = vuosi2;
     tal.innerHTML = tt2;
+    img.src = 'images/talHist/talHistImg1.jpg';
   }
   if (slider.value == 3) {
     output.innerHTML = vuosi3;
     tal.innerHTML = tt3;
+    img.src = 'images/talHist/talHistImg3.jpg';
   }
   if (slider.value == 4) {
     output.innerHTML = vuosi4;
     tal.innerHTML = tt4;
+    img.src = 'images/talHist/talHistImg4.jpg';
   }
   if (slider.value == 5) {
     output.innerHTML = vuosi5;
     tal.innerHTML = tt5;
+    img.src = 'images/talHist/talHistImg5.jpg';
   }
 };
 

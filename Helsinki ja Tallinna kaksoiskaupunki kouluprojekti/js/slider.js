@@ -1,6 +1,7 @@
 var slider = document.getElementById('history-slider');
 var output = document.getElementById('slider-year');
 var hel = document.getElementById('helsinki-slider-text');
+var img = document.getElementById('hist-img');
 
 let vuosi1 = 'Perustusvuosi';
 let vuosi2 = '1700';
@@ -16,22 +17,27 @@ slider.oninput = function() {
   if (slider.value == 1) {
     output.innerHTML = vuosi1;
     hel.innerHTML = ht1;
+    img.src = 'images/helHist/HelHist2.jpg';
   }
   if (slider.value == 2) {
     output.innerHTML = vuosi2;
     hel.innerHTML = ht2;
+    img.src = 'images/helHist/HelHist1.jpg';
   }
   if (slider.value == 3) {
     output.innerHTML = vuosi3;
     hel.innerHTML = ht3;
+    img.src = 'images/helHist/HelHist3.jpg';
   }
   if (slider.value == 4) {
     output.innerHTML = vuosi4;
     hel.innerHTML = ht4;
+    img.src = 'images/helHist/HelHist5.jpg';
   }
   if (slider.value == 5) {
     output.innerHTML = vuosi5;
     hel.innerHTML = ht5;
+    img.src = 'images/helHist/HelHist4.jpg';
   }
 };
 
