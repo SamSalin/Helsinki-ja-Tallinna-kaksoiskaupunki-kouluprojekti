@@ -192,13 +192,22 @@ footer {
     font-size: 30px;
 }
 
-#tekijät {
+#tekijat {
     position: absolute;
     right: 10px;
     bottom: 10px;
     font-size: 20px;
     text-decoration: none;
     color: black;
+}
+
+#css-award {
+    border:0;
+    width:88px;
+    height:31px;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
 }
 
 /*LUONTOREITIT / KARTTA */
@@ -429,6 +438,11 @@ footer {
     #copyright {
         font-size: 20px;
         margin-bottom: 5px;
+    }
+
+    #css-award {
+        width:66px;
+        height:20px;
     }
 
     /* NELIÖMENU */
