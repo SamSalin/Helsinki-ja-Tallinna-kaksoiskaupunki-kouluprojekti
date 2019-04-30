@@ -75,6 +75,8 @@
     #hist-img {
         width: 100%;
         height: auto;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
 
@@ -84,8 +86,18 @@
         margin-top: 100px;
     }
 
+    #hist-img {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
     .history-text-item {
-        height: fit-content;
+        width: 500px;
+        height: 250px;
+    }
+
+    #hist-references {
+        bottom: -100px;
     }
 
 
