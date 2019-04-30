@@ -201,6 +201,15 @@ footer {
     color: black;
 }
 
+#css-award {
+    border:0;
+    width:88px;
+    height:31px;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+
 /*LUONTOREITIT / KARTTA */
 
 #kartta-ja-valinnat {
@@ -429,6 +438,11 @@ footer {
     #copyright {
         font-size: 20px;
         margin-bottom: 5px;
+    }
+
+    #css-award {
+        width:66px;
+        height:20px;
     }
 
     /* NELIÖMENU */
