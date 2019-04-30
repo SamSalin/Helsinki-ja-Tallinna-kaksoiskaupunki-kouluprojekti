@@ -7,6 +7,93 @@
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
     <link rel="stylesheet" href="css/menusheet.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="fancybox/dist/jquery.fancybox.min.css">
+    <style>
+        #kulttuuri {
+            margin-left: 250px;
+            margin-right: 50px;
+        }
+
+        #kulttuuri a:link {
+            color: green;
+        }
+        #kulttuuri a:visited {
+            color: green;
+        }
+        #kulttuuri a:hover {
+            background-color: green;
+            color: white;
+        }
+        #kulttuuri a:active {
+            color: cyan;
+        }
+
+        .avautuva {
+            background-color: grey;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            outline: none;
+            font-size: 20px;
+        }
+
+        #video-container {
+            display: none;
+        }
+
+        .sisalto {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            background-color: cornsilk;
+            transition: max-height 0.2s ease-out;
+        }
+
+        .kuvaosio {
+            position: relative;
+        }
+
+        .kultkuvat {
+            width: 100%;
+        }
+
+        #tekstiosa0 {
+            position: absolute;
+            bottom: 10px;
+            right: 50px;
+            background-color: black;
+            color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+            min-width: 300px;
+            max-height: 140px;
+        }
+
+        #tekstiosa1 {
+            position: absolute;
+            bottom: 10px;
+            right: 50px;
+            background-color: black;
+            color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+            min-width: 300px;
+            max-height: 120px;
+        }
+
+        #tekstiosa2 {
+            position: absolute;
+            top: 10px;
+            right: 50px;
+            background-color: black;
+            color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+            min-width: 300px;
+            max-height: 120px;
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -15,9 +102,10 @@
     </p>
     <div id="saa">
         <script src="https://www.yr.no/place/Finland/Southern_Finland/Helsinki/external_box_stripe.js"></script>
-        <noscript><a href="https://www.yr.no/place/Finland/Southern_Finland/Helsinki/">yr.no: Forecast for Helsinki</a></noscript>
+        <noscript><a href="https://www.yr.no/place/Finland/Southern_Finland/Helsinki/">yr.no: Forecast for Helsinki</a>
+        </noscript>
     </div>
-    <a href="valikko-tallinna.html">
+    <a href="kulttuuriTal.html">
         <img id="logo2" class="logot" src="images/logot/tallinn_logo.png" alt="Tallinnan-logo">
     </a>
     <a href="kulttuuri.html">
@@ -36,16 +124,113 @@
 <span id="pc" style="font-size:30px;cursor:pointer;color:white" onclick="openNav()">&#9776; Valikko </span>
 <span id="mobile" style="display: none ;font-size:30px;cursor:pointer;color:white;position: fixed; top: 0; left: 0; margin: 5px" onclick="openNav()">&#9776; </span>
 
-<h1>Helsingin kulttuuri</h1>
-<p>Helsingissä riittää kulttuuria</p>
-<ul>
-    <a href="images/hki-kuvat/oodi.JPG" data-lightbox="galleria" data-title="Oodi on Helsingin uusi keskustakirjasto"><img src="images/hki-kuvat/oodi_thumb.JPG" alt="Musiikkitalo"></a>
-    <a href="images/hki-kuvat/espa.JPG" data-lightbox="galleria" data-title="Esplanadilta näkyy Utspetskin katedraali"><img src="images/hki-kuvat/espa_thumb.JPG" alt="Esplanadi"></a>
+<div id="kulttuuri">
+    <h1>Helsingin kulttuuri</h1>
+    <button id="over18">Oletko yli 18? Paina nappia jos haluat videon!</button>
+    <div id="video-container">
+        <div id="video-formaatit">
+            <video id="video" width="640" height="360" controls>
+                <source id="mp4-video" src="media/Elokuvaprojekti-MP4.mp4" type="video/mp4"/>
+                <source id="webm-video" src="media/Elokuvaprojekti-WEBM.webm" type="video/webm"/>
+                <source id="ogg-video" src="media/Elokuvaprojekti-OGG.ogg" type="video/ogg"/>
+                Selaimesi ei tue videotoistoa!"
+            </video>
+        </div>
+        <p>Katso video kaikessa kauneudessaan <a data-fancybox href="#linkki-videoon">täältä</a>
+    </div>
+    <div id="fullscreen-video">
 
-    <p id="piilossa" class="hidden">Tässä tekstiä</p>
-</ul>
+        <!-- FULLSCREEN VIDEO -->
+        <video width="1280" height="720" controls
+               id="linkki-videoon" style="display:none;">
+            <source src="media/Elokuvaprojekti-MP4.mp4" type="video/mp4">
+            <source src="media/Elokuvaprojekti-WEBM.webm" type="video/webm">
+            <source src="media/Elokuvaprojekti-OGG.ogg" type="video/ogg">
+            Selaimesi ei tue videotoistoa!
+        </video>
+
+    </div>
+    <button class="avautuva">Tapahtumia</button>
+    <div class="sisalto">
+    <p>Helsingin ehkä suurimpia kulttuuritapahtumia on loppukesällä alkava <a href="https://helsinkifestival.fi/" target="_blank">Helsingin
+        Juhlaviikot</a>, joka on usean viikon
+        kestävä musiikkia, teatteria, taidenäyttelyitä ja performansseja eri puolilla kaupunkia esittelevä tapahtuma.
+        Juhlaviikkojen suosituin yksittäinen tapahtuma on <a href="https://helsinkifestival.fi/taiteidenyo/" target="_blank">Taiteiden
+            yö</a>, jonka aikana ydinkeskustassa on useassa paikassa
+        esitteillä erilaisia taideteoksia tilataiteesta ja performansseista taidenäyttelyihin puolille öin ja
+        pitempäänkin. Vuonna 2015 Helsingin juhlaviikoilla oli noin 278 000 kävijää. Suurimmat yksittäiset tapahtumat
+        ovat vuosittain järjestettävät Flow- ja Weekend-festivaalit. Vuosittain toukokuussa järjestetään Kaisaniemen
+        puistossa eri kulttuureja esittelevä ilmaistapahtuma Maailma kylässä.
+    </p>
+    <p>
+        Kesäkuun 12. päivänä vietetään Helsinki-päivää, jonka lukuisat viihdetapahtumat huipentuvat ulkoilmakonserttiin.
+        Kesäkuun viimeisellä viikolla vietetään Helsinki Pride -ihmisoikeustapahtumaa, jonka kulkueeseen osallistui
+        vuonna 2018 100 000 marssijaa. Heinäkuinen Tuska-festivaali on vuorostaan metallimusiikin suurin tapahtuma
+        Pohjoismaissa. Vuonna 2015 tapahtumassa vieraili noin 25 000 kävijää. Elokuussa urbaanin musiikin ja
+        kaupunkikulttuurin <a href="https://www.flowfestival.com/" target="_blank">Flow Festival</a> kerää kävijöitä Suvilahteen. Vuonna 2018 festivaalilla oli 84 000 kävijää.
+    </p>
+    <p>
+        Elokuva-alan merkittävin tapahtuma on syksyisin järjestettävä <a href="https://hiff.fi/" target="_blank">Rakkautta ja
+        Anarkiaa</a>, jolloin esitetään runsaan
+        viikon aikana sadoissa näytöksissä useita kymmeniä elokuvia, jotka eivät koskaan päädy laajempaan levitykseen
+        esimerkiksi poikkitaiteellisuutensa vuoksi. Vuonna 2014 Rakkautta ja Anarkiaa keräsi 62 000 katsojaa.
+        Dokumenttiin keskittyvä DocPoint on vakiinnuttanut asemansa muutamassa vuodessa lajityypin tärkeimpänä
+        katselmuksena Suomessa. Vuonna 2015 se järjestettiin 14. kerran.
+    </p>
+    </div>
+    <button class="avautuva">Kulttuurin järjestäjät</button>
+    <div class="sisalto">
+    <p>
+        Monet Suomen keskeiset kulttuurilaitokset sijaitsevat Helsingissä, kuten valtion taidemuseo <a href="https://ateneum.fi/" target="_blank">Ateneum</a>, Suomen Kansallisooppera ja -baletti ja Kansallisarkisto. Teattereista voidaan mainita
+        Kansallisteatteri, Helsingin kaupunginteatteri ja Ruotsalainen teatteri.
+    </p>
+    <div class="kuvaosio">
+        <img src="images/hki-kuvat/kiasma.JPG" alt="Kuva Kiasmasta" class="kultkuvat">
+        <div id="tekstiosa0">
+    <p>
+        <a href="https://kiasma.fi/" target="_blank">Kiasma</a> on Helsingin keskustassa sijaitseva nykytaiteen museo. Kiasma on osa Kansallisgalleriaa.
+
+        Kiasma esittää, kerää ja tekee tunnetuksi nykytaidetta. Näyttelyiden lisäksi Kiasmassa järjestetään esityksiä ja tapahtumia
+    </p>
+    </div>
+    </div>
+    <div class="kuvaosio">
+        <img src="images/hki-kuvat/mustalo.JPG" alt="Musiikkitalo" class="kultkuvat">
+        <div id="tekstiosa1">
+            <p>
+                Helsingissä toimii kaksi ammattimaista sinfoniaorkesteria, Helsingin kaupunginorkesteri ja Radion
+                sinfoniaorkesteri, jotka pitävät konsertteja vuonna 2011 valmistuneessa Musiikkitalossa.
+            </p>
+        </div>
+    </div>
+    <p>
+        Suuria populaarimusiikin keikkoja pidetään Olympiastadionilla, Hartwall-areenassa ja Helsingin jäähallissa.
+        Rock-klubeista tunnetuin on Tavastia-klubi.
+    </p>
+
+    <p>
+        Helsingissä on kymmeniä elokuvasaleja. Suurin elokuvasali on 639 paikkainen Tennispalatsin Scape-sali.
+        Kansallisen audiovisuaalisen instituutin teatteri Orion ja muut toimitilat sijaitsevat nekin pääkaupungissa.
+    </p>
+    <p>
+        Kaupungissa on myös kunnallisia kulttuuripalveluita, esimerkiksi kirjastoja.
+        <div class="kuvaosio">
+            <img src="images/hki-kuvat/oodi.JPG" alt="Oodi-kirjasto" class="kultkuvat">
+            <div id="tekstiosa2">
+    <p>
+        Helsingin kaupunginkirjaston
+        pääkirjasto sijaitsee Pasilassa ja vuonna 2018 avattu <a href="https://www.oodihelsinki.fi/" target="_blank">Keskustakirjasto Oodi</a> sijaitsee Kansalaistorilla.
+    </p>
+    </div>
+    <p>
+        Helsingin kaupungin kulttuuriasiainkeskus hallinnoi Helsingin kulttuurikeskuksia kuten Kanneltaloa ja
+        Malmitaloa. Niissä järjestetään vuosittain kymmeniä konsertteja ja muita esityksiä.</p>
+    </p>
+</div>
+</div>
+<p>Lähde: Wikipedia</p>
 <a href="https://www.myhelsinki.fi/fi/näe-ja-koe/tapahtumat" target="_blank">MyHelsinki tapahtumasivusto</a>
-<script src="js/lightbox/lightbox-plus-jquery.js"></script>
+</div>
 <footer>
     <p id="copyright">CSS Miami Productions &#169; 2019</p>
     <a id="tekijat" href="credits.html">Tekijät</a>
@@ -54,7 +239,10 @@
         </a>
     </p>
 </footer>
+<script src="js/kulttuuri.js"></script>
 <script src="js/valikot.js"></script>
 <script src="js/menuscript.js"></script>
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="fancybox/dist/jquery.fancybox.min.js"></script>
 </body>
 </html>

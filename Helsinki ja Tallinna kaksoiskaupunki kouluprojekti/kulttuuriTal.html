@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helsinki - Matka pääkaupungin sykkeeseen</title>
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/menusheet.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="fancybox/dist/jquery.fancybox.min.css">
+    <style>
+        #kulttuuri {
+            margin-left: 250px;
+            margin-right: 50px;
+        }
+
+        #kulttuuri a:link {
+            color: green;
+        }
+
+        #kulttuuri a:visited {
+            color: green;
+        }
+
+        #kulttuuri a:hover {
+            background-color: green;
+            color: white;
+        }
+
+        #kulttuuri a:active {
+            color: cyan;
+        }
+
+        .avautuva {
+            background-color: grey;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            outline: none;
+            font-size: 20px;
+        }
+
+        .sisalto {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            background-color: cornsilk;
+            transition: max-height 0.2s ease-out;
+        }
+
+        .kuvaosio {
+            position: relative;
+        }
+
+        .kultkuvat {
+            width: 100%;
+        }
+
+        #tekstiosa0 {
+            position: absolute;
+            bottom: 10px;
+            right: 50px;
+            background-color: black;
+            color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+            min-width: 300px;
+            max-height: 140px;
+        }
+
+        #tekstiosa1 {
+            position: absolute;
+            bottom: 10px;
+            right: 50px;
+            background-color: black;
+            color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+            min-width: 300px;
+            max-height: 120px;
+        }
+
+        #tekstiosa2 {
+            position: absolute;
+            top: 10px;
+            right: 50px;
+            background-color: black;
+            color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+            min-width: 300px;
+            max-height: 120px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <p id="kello">
+        <script src="js/kello.js"></script>
+    </p>
+    <div id="saa">
+        <script src="https://www.yr.no/place/Finland/Southern_Finland/Helsinki/external_box_stripe.js"></script>
+        <noscript><a href="https://www.yr.no/place/Finland/Southern_Finland/Helsinki/">yr.no: Forecast for Helsinki</a>
+        </noscript>
+    </div>
+    <a href="kulttuuriTal.html.html">
+        <img id="logo2" class="logot" src="images/logot/tallinn_logo.png" alt="Tallinnan-logo">
+    </a>
+    <a href="kulttuuri.html">
+        <img id="logo1" class="logot" src="images/logot/helsinki_logo.png" alt="Helsingin logo">
+    </a>
+    <img id="header-image" src="images/header-img-uusi.jpg" alt="header-kuva"/>
+</header>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="valikko-tallinna.html">Etusivu</a>
+    <a href="kulttuuriTal.html">Kulttuuri</a>
+    <a href="historiaTal.html">Historia</a>
+    <a href="luontoreitit.html">Luontoreittikartta</a>
+    <a href="credits.html">Tietoa Meistä</a>
+</div>
+<span id="pc" style="font-size:30px;cursor:pointer;color:white" onclick="openNav()">&#9776; Valikko </span>
+<span id="mobile"
+      style="display: none ;font-size:30px;cursor:pointer;color:white;position: fixed; top: 0; left: 0; margin: 5px"
+      onclick="openNav()">&#9776; </span>
+
+<div id="kulttuuri">
+    <h1>Tallinnan kulttuuri</h1>
+
+    <button class="avautuva">Pop- ja rock-konsertit</button>
+    <div class="sisalto">
+        <p>
+            Elävän musiikin pariin pääsee kätevästi piipahtamalla baariin tai pubiin, joista monissa on bändikeikkoja
+            etenkin viikonloppuisin. Tietoa esiintyjistä ja keikkapaikoista löytyy jonkin verran myös virallisesta
+            tapahtumakalenterista ja katuvarsien flyereista. Oman musiikkimakunsa ohjaamana voi suunnistaa vaikka
+            rock-henkiseen Rock Cafeen.
+            Hyvin suosittujen esiintyjien konsertit ilmoitetaan niin ikään tapahtumakalenterissa. Paikkoja, joissa
+            isompia konsertteja järjestetään ovat talvisin Saku Suurhall ja kesäisin Tallinna Lauluväljak (Tallinnan
+            laululava). Saku Suurhall, joka kansainvälisesti tunnetaan nimellä Saku Arena, on myös paikka, jossa on
+            urheilutapahtumia, kuten Viron maajoukkueen koripallo-otteluita, ja siellä on muitakin suuren luokan
+            tapahtumia talvikauden aikana, elokuulta kesän alkuun.
+        </p>
+    </div>
+    <button class="avautuva">Elokuvat</button>
+    <div class="sisalto">
+        <p>
+            Tallinnassa näytetään paljon erilaisia elokuvia, jotka ovat peräisin muualtakin kuin englanninkielisistä
+            maista, ja siellä on Helsinkiä monipuolisemmat ja paremmat elokuvateatterit. Tallinnassa voi mennä
+            keskustassa suureen teatteriin, jossa on monta salia, ja siellä on myös erikoiselokuvateattereita, niin
+            keskustassa kuin muuallakin.
+            Jos haluaa mennä suureen elokuvateatteriin, jossa näytetään elokuvia aamuvarhaisesta yömyöhään, on Tallinnan
+            keskustassa kaksi tällaista paikkaa. Aivan sataman ja Viru Keskuksen vieressä oleva Forum (Coca-Cola Plaza)
+            näyttää elokuvia pitkin päivää, varsin kohtuullisin hinnoin. Melko lähellä sitä sijaitsevassa
+            Solaris-keskuksessa on Solaris Cinema, jossa sielläkin voi elokuvia katsoa aamusta iltaan.
+
+        </p>
+    </div>
+    <button class="avautuva">Klassinen musiikki, baletti ja ooppera</button>
+    <div class="sisalto">
+
+
+    <div class="kuvaosio">
+        <img src="images/tall-kuvat/aljuarezFlickr.jpg" alt="Kuva Estonia-teatterista" class="kultkuvat">
+        <div id="tekstiosa0">
+            <p>
+                Rahvusooper Estonia (Estonia pst 4) [kartalla] eli Estonian teatteri on Solaris-ostoskeskuksen vieressä,
+                hyvin lähellä Viru-hotellia sijaitseva oopperatalo. Siellä esitetään oopperan lisäksi operettia,
+                balettia, musikaaleja ja klassisen musiikin konsertteja.
+            </p>
+        </div>
+    </div>
+    </div>
+    <button class="avautuva">Vanhakaupunki</button>
+    <div class="sisalto">
+        <p>
+            Vanhakaupunki on paikka, jossa voisi loputtomiin kierrellä baareja ja siellä on monia eri alueita, joilla on
+            normaalia enemmän tai normaalia parempia baareja.
+        </p>
+        <p>
+            Sen alueella on kuitenkin lähinnä hintavia ruokaravintoloita, ja jos sen vaiheilla haluaa mennä baariin,
+            josta saa myös melko tyypillisiä pubiruokia, on Mad Murphy’s Mündi-kadun kulmauksessa hyvä valinta. Siellä
+            on suuri tupakkahuone, urheilua näytetään suurista ruuduista ja juomien hinnat ovat kaikesta huolimatta
+            pysyneet vuodesta toiseen kohtuullisina.
+        </p>
+        <div class="kuvaosio">
+            <img src="images/tall-kuvat/guillaume_speurt.jpg" alt="Kuva joulu" class="kultkuvat">
+            <div id="tekstiosa2">
+                <p>
+                    Raatihuoneentori (Raekoja plads) on Tallinnan keskusaukio. Joulutori rakennettaan vuosittain valtavan joulukuusen ympärille, ja alue koristellaan jouluvaloilla ja sadoilla joulukoristeilla.
+                </p>
+            </div>
+        </div>
+    </div>
+    <p>Lähde: <a href="https://www.pienimatkaopas.com/tallinna/tapahtumat.html" target="_blank">Pieni matkaopas</a> ja <a href="https://www.rantapallo.fi/kaupunkilomat/nauti-tunnelmasta-tallinnan-joulumarkkinoilla-5-vinkkia-kavijalle/" target="_blank"> Rantapallo</a></p>
+    <a href="https://www.visittallinn.ee/fin/matkailija/nae-koe/tapahtumat" target="_blank">Visit Tallinn
+        tapahtumasivusto</a>
+
+</div>
+<footer>
+    <p id="copyright">CSS Miami Productions &#169; 2019</p>
+    <a id="tekijat" href="credits.html">Tekijät</a>
+    <p id="css-award">
+        <img src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!"/>
+        </a>
+    </p>
+</footer>
+<script src="js/kulttuuri.js"></script>
+<script src="js/valikot.js"></script>
+<script src="js/menuscript.js"></script>
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="fancybox/dist/jquery.fancybox.min.js"></script>
+</body>
+</html>
