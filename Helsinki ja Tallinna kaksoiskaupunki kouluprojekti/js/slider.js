@@ -17,27 +17,27 @@ slider.oninput = function() {
   if (slider.value == 1) {
     output.innerHTML = vuosi1;
     hel.innerHTML = ht1;
-    img.src = 'images/helHist/HelHist2.jpg';
+    img.src = 'images/helHist/HelHist2-edited.jpg';
   }
   if (slider.value == 2) {
     output.innerHTML = vuosi2;
     hel.innerHTML = ht2;
-    img.src = 'images/helHist/HelHist1.jpg';
+    img.src = 'images/helHist/HelHist1-edited.jpg';
   }
   if (slider.value == 3) {
     output.innerHTML = vuosi3;
     hel.innerHTML = ht3;
-    img.src = 'images/helHist/HelHist3.jpg';
+    img.src = 'images/helHist/HelHist3-edited.jpg';
   }
   if (slider.value == 4) {
     output.innerHTML = vuosi4;
     hel.innerHTML = ht4;
-    img.src = 'images/helHist/HelHist5.jpg';
+    img.src = 'images/helHist/HelHist5-edited.jpg';
   }
   if (slider.value == 5) {
     output.innerHTML = vuosi5;
     hel.innerHTML = ht5;
-    img.src = 'images/helHist/HelHist4.jpg';
+    img.src = 'images/helHist/HelHist4-edited.jpg';
   }
 };
 

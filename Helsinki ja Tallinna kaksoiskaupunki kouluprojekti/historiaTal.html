@@ -15,24 +15,27 @@
         <script src="js/kello.js"></script>
     </p>
     <div id="saa">
-        <script src="https://www.yr.no/place/Finland/Southern_Finland/Helsinki/external_box_stripe.js"></script>
-        <noscript><a href="https://www.yr.no/place/Finland/Southern_Finland/Helsinki/">yr.no: Forecast for Helsinki</a></noscript>
+        <script src="https://www.yr.no/place/Estland/Harjumaa/Tallinn/external_box_stripe.js"></script>
+        <noscript><a href="https://www.yr.no/place/Estland/Harjumaa/Tallinn/">yr.no: Forecast for Api</a></noscript>
     </div>
-    <a href="valikko-tallinna.html">
+    <a href="historiaTal.html">
         <img src="images/logot/tallinn_logo.png" id="logo2" class="logot" height="75" width="">
     </a>
-    <a href="valikko-helsinki.html">
+    <a href="historia.html">
         <img src="images/logot/helsinki_logo.png" id="logo1" class="logot" height="75" width="">
     </a>
+    <img id="header-image" src="images/header-img-uusi.jpg" alt="header-kuva"/>
 </header>
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#">Etusivu</a>
-    <a href="#">Kartat</a>
-    <a href="#">Historia</a>
-    <a href="#">Tietoa Meistä</a>
+    <a href="valikko-tallinna.html">Etusivu</a>
+    <a href="kulttuuri.html">Kulttuuri</a>
+    <a href="historiaTal.html">Historia</a>
+    <a href="luontoreitit.html">Luontoreittikartat</a>
+    <a href="credits.html">Tietoa Meistä</a>
 </div>
-<span style="font-size:30px;cursor:pointer;color:white" onclick="openNav()">&#9776; Valikko </span>
+<span id="pc" style="font-size:30px;cursor:pointer;color:white" onclick="openNav()">&#9776; Valikko </span>
+<span id="mobile" style="display: none ;font-size:30px;cursor:pointer;color:white;position: fixed; top: 0; left: 0; margin: 5px" onclick="openNav()">&#9776; </span>
 
 <h1>Tallinan Historiaa</h1>
 <br>
@@ -45,7 +48,7 @@
 
 <section class="history-texts">
     <div class="history-text-item">
-        <img id="hist-img" src="images/talHist/TalHistImg2.jpg">
+        <img id="hist-img" src="images/talHist/TalHistImg2-edited.jpg">
         <h3>Tallinna</h3>
         <a id="tallinn-slider-text"></a>
     </div>
@@ -56,15 +59,12 @@
     <a href="https://fi.wikipedia.org/wiki/Helsinki#Historia">Helsinki</a>
     <a href="https://fi.wikipedia.org/wiki/Tallinna#Historia">Tallinna</a>
 </div>
-<br>
-
 <footer>
-    <div class="footer">
-        <p id="copyright">CSS Miami Productions &#169; 2019</p>
-        <a id="tekijät" href="credits.html">Tekijät</a>
-    </div>
+    <p id="copyright">CSS Miami Productions &#169; 2019</p>
+    <a id="tekijät" href="credits.html">Tekijät</a>
 </footer>
 <script src="js/menuscript.js"></script>
 <script src="js/sliderTal.js"></script>
+<script src="js/valikot.js"></script>
 </body>
 </html>

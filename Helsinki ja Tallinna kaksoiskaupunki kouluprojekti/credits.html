@@ -8,104 +8,47 @@
     <link rel="stylesheet" href="css/menusheet.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 </head>
-<style>
-
-
-    #tekijat-otsikko {
-        margin-bottom: 50px;
-    }
-
-    #leipateksti {
-        text-align: center;
-    }
-
-    #kuvat {
-        display: flex;
-        flex-flow: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    #samuli-div {
-        position: relative;
-        width: 30%;
-        height: 600px;
-        background-color: white;
-    }
-
-    #samuli-kuva {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        width: 40%;
-        margin: auto;
-        height: auto;
-    }
-
-    #emil-div {
-        position: relative;
-        width: 30%;
-        height: 600px;
-        background-color: deeppink;
-    }
-
-    #emil-kuva {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        width: 50%;
-        margin: auto;
-        height: auto;
-    }
-
-    #kimmo-div {
-        position: relative;
-        width: 30%;
-        height: 600px;
-        background-color: greenyellow;
-    }
-
-    #kimmo-kuva {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        width: 40%;
-        margin: auto;
-        height: auto;
-    }
-
-    .kuvateksti {
-        position: relative;
-        text-align: center;
-        bottom: 0;
-    }
-
-</style>
 <body>
 <header>
     <p id="kello">
         <script src="js/kello.js"></script>
     </p>
+    <div id="saa">
+        <script src="https://www.yr.no/place/Finland/Southern_Finland/Helsinki/external_box_stripe.js"></script>
+        <noscript><a href="https://www.yr.no/place/Finland/Southern_Finland/Helsinki/">yr.no: Forecast for Helsinki</a></noscript>
+        <script src="https://www.yr.no/place/Estland/Harjumaa/Tallinn/external_box_stripe.js"></script>
+        <noscript><a href="https://www.yr.no/place/Estland/Harjumaa/Tallinn/">yr.no: Forecast for Api</a></noscript>
+    </div>
     <a href="valikko-tallinna.html">
         <img src="images/logot/tallinn_logo.png" id="logo2" class="logot" height="75" width="">
     </a>
     <a href="valikko-helsinki.html">
         <img src="images/logot/helsinki_logo.png" id="logo1" class="logot" height="75" width="">
     </a>
+    <img id="header-image" src="images/header-img-uusi.jpg" alt="header-kuva"/>
 </header>
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#">Etusivu</a>
-    <a href="luontoreitit.html">Luontoreittikartta</a>
+    <a href="valikko-helsinki.html">Etusivu</a>
+    <a href="kulttuuri.html">Kulttuuri</a>
     <a href="historia.html">Historia</a>
-    <a href="#">Tietoa Meistä</a>
+    <a href="luontoreitit.html">Luontoreittikartta</a>
+    <a href="credits.html">Tietoa Meistä</a>
 </div>
-<span style="font-size:30px;cursor:pointer;color:white; margin-left: 5px" onclick="openNav()">&#9776; Valikko </span>
+<span id="pc" style="font-size:30px;cursor:pointer;color:white" onclick="openNav()">&#9776; Valikko </span>
+<span id="mobile" style="display: none ;font-size:30px;cursor:pointer;color:white;position: fixed; top: 0; left: 0; margin: 5px" onclick="openNav()">&#9776; </span>
 <div id="tekijat-otsikko">
     <h1>Tekijät</h1>
+</div>
+<div id="tarina">
+    <p>CSS Miami syntyi unelmasta. Unelmasta tehdä jotakin suurta. Valittettavasti suuruus ei tule itsestään vaan se tarvitsee kivenkovia tekijöitä. Onneksi nämä tekijät löysivät toisensa
+        pääkaupunkiseudun melskeestä.</p><br/>
+
+    <p>Mitä CSS Miami tarkoittaa? Se tarkoittaa irtiottoa arjesta. Se tarkoittaa itsensä likoon pistämistä joka päivä, joka tunti, joka sekunti. Se tarkoittaa sammumatonta tiedonnälkää. Se
+        tarkoittaa <b>voittamista.</b></p><br/>
+
+    <p>Vakuutamme, että CSS Miami ei ole pyramidihuijaus* vaan jotain aivan uutta.</p>
+
 </div>
 <div id="leipateksti">
     <h2>Tämän sivuston ovat ylpeänä luoneet:</h2>
@@ -124,7 +67,9 @@
         <h2 class="kuvateksti">Ylijumala Kimmo</h2>
     </div>
 </div>
+<p id="ei-huijaus"><q>Pyramidihuijaus on laitonta rahankeräystä, joka toteutetaan ketjukirjeeseen tai verkostomarkkinointiin verrattavalla tavalla.</q> Me emme ole niin kehittyneitä.</p>
 <script src="js/menuscript.js"></script>
 <script src="js/valikot.js"></script>
+<script src="js/credits.js"></script>
 </body>
 </html>

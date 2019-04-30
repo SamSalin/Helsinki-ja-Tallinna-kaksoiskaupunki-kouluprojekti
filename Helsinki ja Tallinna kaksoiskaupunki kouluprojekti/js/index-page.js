@@ -1,5 +1,7 @@
 'use strict';
 
+setInterval(lock, 1000);
+
 let helsinkiVaakunaImg = document.getElementById('helsinki-vaakuna');
 let tallinnaVaakunaImg = document.getElementById('tallinna-vaakuna');
 
@@ -28,6 +30,10 @@ function glowTallinnaExit() {
   tallinnaVaakunaImg.src = 'images/vaakunat/tallinna_vaakuna.png';
   tallinnaVaakunaImg.removeEventListener('mouseleave', glowTallinnaExit);
   tallinnaVaakunaImg.addEventListener('mouseenter', glowTallinnaEnter);
+}
+
+function lock() {
+  window.scroll(0, 150);
 }
 
 

@@ -1,3 +1,5 @@
+
+
 .slidecontainer {
     text-align: center;
     display: inline-block;
@@ -37,10 +39,10 @@
 
 .history-text-item {
     width: 500px;
-    height: 300px;
+    height: 250px;
     margin-top: 0;
     padding-top: 0;
-    background-color: lightgrey;
+    background-color: rgba(211, 211, 211, 0.5);
     text-align: center;
 }
 
@@ -55,12 +57,36 @@
 }
 
 #hist-references {
-    position: absolute;
+    position: relative;
+    background-color: rgba(211, 211, 211, 0.5);
     left: 0;
     right: 0;
+    bottom: -300px;
     margin: auto;
     display: block;
     text-align: center;
-    background-color: lightgrey;
-    width: 20%;
+    width: fit-content;
+}
+
+/* MOBIILI OPTIMOINTI */
+
+@media only screen and (max-width: 800px) {
+
+    #hist-img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    footer {
+        margin-top: 100px;
+    }
+
+    .history-text-item {
+        height: fit-content;
+    }
+
+
 }
