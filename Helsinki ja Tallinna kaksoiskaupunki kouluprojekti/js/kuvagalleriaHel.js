@@ -9,7 +9,6 @@ let edellisetSivut = [];
 let korkeinSivuNumero = 1;
 
 let i = 0;
-annetutTagit.push('helsinki');
 
 let edellinenSivuButton = document.getElementById('edellinen-sivu');
 let seuraavaSivuButton = document.getElementById('seuraava-sivu');
@@ -26,7 +25,7 @@ function haeJSON() {
 
   let yhdistettyTagi = annetutTagit.join();
 
-  url = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=648819e8a1b8d9bf86ef0f3a005a4007&tags=' +
+  url = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=648819e8a1b8d9bf86ef0f3a005a4007&tags=helsinki,' +
       yhdistettyTagi +
       '&tag_mode=all&safe_search=1&sort=interestingness-desc&page='
       + sivu +
@@ -104,25 +103,30 @@ function paivitaKuvat(kuvat) {
 }
 
 function seuraavaSivu() {
-  edellisetSivut[sivu] = document.getElementById('kuva-lista').innerHTML;
   sivu++;
 
-  document.getElementById('helsinki-kuvina').
-      scrollIntoView({behavior: 'smooth', block: 'center'});
-
   edellinenSivuButton.disabled = false;
-  document.getElementById('kuva-lista').innerHTML = '';
 
-  if (sivu >= korkeinSivuNumero) {
+  if (sivu > korkeinSivuNumero) {
     korkeinSivuNumero = sivu;
-    console.log(korkeinSivuNumero);
+    alert('Korkein sivu!');
+    edellisetSivut.push(document.getElementById('kuva-lista').innerHTML);
+    document.getElementById('kuva-lista').innerHTML = '';
+    document.getElementById('helsinki-kuvina').
+        scrollIntoView({behavior: 'smooth', block: 'center'});
     haeJSON();
   } else {
-    document.getElementById('kuva-lista').innerHTML = edellisetSivut[sivu];
+    document.getElementById('kuva-lista').innerHTML = edellisetSivut[sivu - 1];
+    document.getElementById('helsinki-kuvina').
+        scrollIntoView({behavior: 'smooth', block: 'center'});
   }
 }
 
 function edellinenSivu() {
+  if (sivu === korkeinSivuNumero) {
+    alert('Tallennettu!');
+    edellisetSivut.push(document.getElementById('kuva-lista').innerHTML);
+  }
   sivu--;
 
   if (sivu === 1) {
@@ -132,7 +136,7 @@ function edellinenSivu() {
   document.getElementById('helsinki-kuvina').
       scrollIntoView({behavior: 'smooth', block: 'center'});
   seuraavaSivuButton.enabled = true;
-  document.getElementById('kuva-lista').innerHTML = edellisetSivut[sivu];
+  document.getElementById('kuva-lista').innerHTML = edellisetSivut[sivu - 1];
 }
 
 function tagiAnnettu() {
@@ -180,7 +184,7 @@ function poistaTagi(indeksi) {
     if (indeksi !== i) {
       uusiArray.push(annetutTagit[i]);
     } else {
-      console.log(document.getElementsByTagName("li")[i]);
+      console.log(document.getElementsByTagName('li')[i]);
     }
   }
 
