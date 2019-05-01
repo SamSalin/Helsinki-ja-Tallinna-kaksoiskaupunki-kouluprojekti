@@ -30,7 +30,6 @@ function haeJSON() {
       + sivu +
       '&extras=original_format,o_dims&content_type=1&media=photos&format=json&nojsoncallback=1';
 
-  console.log(url);
 
   fetch(url).then(function(vastaus) {
     return vastaus.json();
@@ -136,12 +135,7 @@ function edellinenSivu() {
 
 function tagiAnnettu() {
 
-  tagiButton.removeEventListener('click', tagiAnnettu);
-  tagiButton.addEventListener('click', uusiTagHaku);
-
-
   yhdistettyTagi = '';
-  console.log(yhdistettyTagi);
   let annettuTagi = document.getElementById('lisaa-tagit').children;
 
   for (let i = 0; i < 3; i++) {
@@ -169,17 +163,19 @@ function tagiAnnettu() {
       document.getElementById('virheilmoitus').style.display = 'none';
     }
     yhdistettyTagi = annetutTagit.join();
-    console.log(yhdistettyTagi.length);
   }
 
-  if (annetutTagit.length !== 0) {
+  if (annetutTagit[0] === '' && annetutTagit[1] === '' && annetutTagit[2] === '') {
+    alert('Et antanut tageja!')
+  } else if (annetutTagit.length !== 0) {
     document.getElementById('lisaa-tagit').style.display = 'none';
     document.getElementById('tagId').innerText = 'Poista annetut tagit';
 
+    tagiButton.removeEventListener('click', tagiAnnettu);
+    tagiButton.addEventListener('click', uusiTagHaku);
+
     haeJSON();
     alert('Tagit lisätty!');
-  } else if (yhdistettyTagi.length === 0) {
-    alert('Et antanut yhtään tagia!');
   }
 }
 
