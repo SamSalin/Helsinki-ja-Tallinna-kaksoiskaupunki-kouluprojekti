@@ -88,7 +88,17 @@ function paivitaKuvat(kuvat) {
 
         tarvittavatKuvat++;
       }
-      i++;
+      if (i === (kuvat.photos.photo.length - 1)) {
+        if (i !== 99) {
+          seuraavaSivuButton.disabled = true;
+          break;
+        } else {
+          i = 0;
+          haeJSON();
+        }
+      } else {
+        i++;
+      }
     }
   }
 }
