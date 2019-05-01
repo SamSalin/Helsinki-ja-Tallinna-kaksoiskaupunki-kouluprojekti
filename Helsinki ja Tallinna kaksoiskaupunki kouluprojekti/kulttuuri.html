@@ -10,20 +10,23 @@
     <link rel="stylesheet" type="text/css" href="fancybox/dist/jquery.fancybox.min.css">
     <style>
         #kulttuuri {
-            margin-left: 250px;
+            margin-left: 200px;
             margin-right: 50px;
         }
 
         #kulttuuri a:link {
             color: green;
         }
+
         #kulttuuri a:visited {
             color: green;
         }
+
         #kulttuuri a:hover {
             background-color: green;
             color: white;
         }
+
         #kulttuuri a:active {
             color: cyan;
         }
@@ -58,7 +61,12 @@
             width: 100%;
         }
 
-        #tekstiosa0 {
+        #patsaita {
+            text-decoration-line: underline;
+            text-decoration-style: double;
+        }
+
+        .tekstiosa {
             position: absolute;
             bottom: 10px;
             right: 50px;
@@ -70,19 +78,8 @@
             max-height: 140px;
         }
 
-        #tekstiosa1 {
-            position: absolute;
-            bottom: 10px;
-            right: 50px;
-            background-color: black;
-            color: white;
-            padding-left: 20px;
-            padding-right: 20px;
-            min-width: 300px;
-            max-height: 120px;
-        }
 
-        #tekstiosa2 {
+        .tekstiosayla {
             position: absolute;
             top: 10px;
             right: 50px;
@@ -92,6 +89,31 @@
             padding-right: 20px;
             min-width: 300px;
             max-height: 120px;
+        }
+
+        .tekstiosavasen {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: black;
+            color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+            max-width: 35%;
+        }
+
+        @media only screen and (max-width: 750px) {
+            .tekstiosa, .tekstiosayla {
+                position: static;
+                min-width: 0;
+                max-height: 400px;
+            }
+
+            .tekstiosavasen {
+                position: static;
+                min-width: 300px;
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -122,11 +144,16 @@
     <a href="credits.html">Tietoa Meistä</a>
 </div>
 <span id="pc" style="font-size:30px;cursor:pointer;color:white" onclick="openNav()">&#9776; Valikko </span>
-<span id="mobile" style="display: none ;font-size:30px;cursor:pointer;color:white;position: fixed; top: 0; left: 0; margin: 5px" onclick="openNav()">&#9776; </span>
+<span id="mobile"
+      style="display: none ;font-size:30px;cursor:pointer;color:white;position: fixed; top: 0; left: 0; margin: 5px"
+      onclick="openNav()">&#9776; </span>
 
 <div id="kulttuuri">
     <h1>Helsingin kulttuuri</h1>
+    <img src="images/hki-kuvat/espa.JPG" alt="Näkymä Esplanadilta" class="kultkuvat">
+    <h2>Suomalaisuus on lahja</h2>
     <button id="over18">Oletko yli 18? Paina nappia jos haluat videon!</button>
+    <br><br>
     <div id="video-container">
         <div id="video-formaatit">
             <video id="video" width="640" height="360" controls>
@@ -152,90 +179,163 @@
     </div>
     <button class="avautuva">Tapahtumia</button>
     <div class="sisalto">
-    <p>Helsingin ehkä suurimpia kulttuuritapahtumia on loppukesällä alkava <a href="https://helsinkifestival.fi/" target="_blank">Helsingin
-        Juhlaviikot</a>, joka on usean viikon
-        kestävä musiikkia, teatteria, taidenäyttelyitä ja performansseja eri puolilla kaupunkia esittelevä tapahtuma.
-        Juhlaviikkojen suosituin yksittäinen tapahtuma on <a href="https://helsinkifestival.fi/taiteidenyo/" target="_blank">Taiteiden
-            yö</a>, jonka aikana ydinkeskustassa on useassa paikassa
-        esitteillä erilaisia taideteoksia tilataiteesta ja performansseista taidenäyttelyihin puolille öin ja
-        pitempäänkin. Vuonna 2015 Helsingin juhlaviikoilla oli noin 278 000 kävijää. Suurimmat yksittäiset tapahtumat
-        ovat vuosittain järjestettävät Flow- ja Weekend-festivaalit. Vuosittain toukokuussa järjestetään Kaisaniemen
-        puistossa eri kulttuureja esittelevä ilmaistapahtuma Maailma kylässä.
-    </p>
-    <p>
-        Kesäkuun 12. päivänä vietetään Helsinki-päivää, jonka lukuisat viihdetapahtumat huipentuvat ulkoilmakonserttiin.
-        Kesäkuun viimeisellä viikolla vietetään Helsinki Pride -ihmisoikeustapahtumaa, jonka kulkueeseen osallistui
-        vuonna 2018 100 000 marssijaa. Heinäkuinen Tuska-festivaali on vuorostaan metallimusiikin suurin tapahtuma
-        Pohjoismaissa. Vuonna 2015 tapahtumassa vieraili noin 25 000 kävijää. Elokuussa urbaanin musiikin ja
-        kaupunkikulttuurin <a href="https://www.flowfestival.com/" target="_blank">Flow Festival</a> kerää kävijöitä Suvilahteen. Vuonna 2018 festivaalilla oli 84 000 kävijää.
-    </p>
-    <p>
-        Elokuva-alan merkittävin tapahtuma on syksyisin järjestettävä <a href="https://hiff.fi/" target="_blank">Rakkautta ja
-        Anarkiaa</a>, jolloin esitetään runsaan
-        viikon aikana sadoissa näytöksissä useita kymmeniä elokuvia, jotka eivät koskaan päädy laajempaan levitykseen
-        esimerkiksi poikkitaiteellisuutensa vuoksi. Vuonna 2014 Rakkautta ja Anarkiaa keräsi 62 000 katsojaa.
-        Dokumenttiin keskittyvä DocPoint on vakiinnuttanut asemansa muutamassa vuodessa lajityypin tärkeimpänä
-        katselmuksena Suomessa. Vuonna 2015 se järjestettiin 14. kerran.
-    </p>
+        <p>Helsingin ehkä suurimpia kulttuuritapahtumia on loppukesällä alkava <a href="https://helsinkifestival.fi/"
+                                                                                  target="_blank">Helsingin
+            Juhlaviikot</a>, joka on usean viikon
+            kestävä musiikkia, teatteria, taidenäyttelyitä ja performansseja eri puolilla kaupunkia esittelevä
+            tapahtuma.
+            Juhlaviikkojen suosituin yksittäinen tapahtuma on <a href="https://helsinkifestival.fi/taiteidenyo/"
+                                                                 target="_blank">Taiteiden
+                yö</a>, jonka aikana ydinkeskustassa on useassa paikassa
+            esitteillä erilaisia taideteoksia tilataiteesta ja performansseista taidenäyttelyihin puolille öin ja
+            pitempäänkin. Vuonna 2015 Helsingin juhlaviikoilla oli noin 278 000 kävijää. Suurimmat yksittäiset
+            tapahtumat
+            ovat vuosittain järjestettävät Flow- ja Weekend-festivaalit. Vuosittain toukokuussa järjestetään Kaisaniemen
+            puistossa eri kulttuureja esittelevä ilmaistapahtuma Maailma kylässä.
+        </p>
+        <p>
+            Kesäkuun 12. päivänä vietetään Helsinki-päivää, jonka lukuisat viihdetapahtumat huipentuvat
+            ulkoilmakonserttiin.
+            Kesäkuun viimeisellä viikolla vietetään Helsinki Pride -ihmisoikeustapahtumaa, jonka kulkueeseen osallistui
+            vuonna 2018 100 000 marssijaa. Heinäkuinen Tuska-festivaali on vuorostaan metallimusiikin suurin tapahtuma
+            Pohjoismaissa. Vuonna 2015 tapahtumassa vieraili noin 25 000 kävijää. Elokuussa urbaanin musiikin ja
+            kaupunkikulttuurin <a href="https://www.flowfestival.com/" target="_blank">Flow Festival</a> kerää kävijöitä
+            Suvilahteen. Vuonna 2018 festivaalilla oli 84 000 kävijää.
+        </p>
+        <p>
+            Elokuva-alan merkittävin tapahtuma on syksyisin järjestettävä <a href="https://hiff.fi/" target="_blank">Rakkautta
+            ja
+            Anarkiaa</a>, jolloin esitetään runsaan
+            viikon aikana sadoissa näytöksissä useita kymmeniä elokuvia, jotka eivät koskaan päädy laajempaan
+            levitykseen
+            esimerkiksi poikkitaiteellisuutensa vuoksi. Vuonna 2014 Rakkautta ja Anarkiaa keräsi 62 000 katsojaa.
+            Dokumenttiin keskittyvä DocPoint on vakiinnuttanut asemansa muutamassa vuodessa lajityypin tärkeimpänä
+            katselmuksena Suomessa. Vuonna 2015 se järjestettiin 14. kerran.
+        </p>
     </div>
     <button class="avautuva">Kulttuurin järjestäjät</button>
     <div class="sisalto">
-    <p>
-        Monet Suomen keskeiset kulttuurilaitokset sijaitsevat Helsingissä, kuten valtion taidemuseo <a href="https://ateneum.fi/" target="_blank">Ateneum</a>, Suomen Kansallisooppera ja -baletti ja Kansallisarkisto. Teattereista voidaan mainita
-        Kansallisteatteri, Helsingin kaupunginteatteri ja Ruotsalainen teatteri.
-    </p>
-    <div class="kuvaosio">
-        <img src="images/hki-kuvat/kiasma.JPG" alt="Kuva Kiasmasta" class="kultkuvat">
-        <div id="tekstiosa0">
-    <p>
-        <a href="https://kiasma.fi/" target="_blank">Kiasma</a> on Helsingin keskustassa sijaitseva nykytaiteen museo. Kiasma on osa Kansallisgalleriaa.
-
-        Kiasma esittää, kerää ja tekee tunnetuksi nykytaidetta. Näyttelyiden lisäksi Kiasmassa järjestetään esityksiä ja tapahtumia
-    </p>
-    </div>
-    </div>
-    <div class="kuvaosio">
-        <img src="images/hki-kuvat/mustalo.JPG" alt="Musiikkitalo" class="kultkuvat">
-        <div id="tekstiosa1">
-            <p>
-                Helsingissä toimii kaksi ammattimaista sinfoniaorkesteria, Helsingin kaupunginorkesteri ja Radion
-                sinfoniaorkesteri, jotka pitävät konsertteja vuonna 2011 valmistuneessa Musiikkitalossa.
-            </p>
-        </div>
-    </div>
-    <p>
-        Suuria populaarimusiikin keikkoja pidetään Olympiastadionilla, Hartwall-areenassa ja Helsingin jäähallissa.
-        Rock-klubeista tunnetuin on Tavastia-klubi.
-    </p>
-
-    <p>
-        Helsingissä on kymmeniä elokuvasaleja. Suurin elokuvasali on 639 paikkainen Tennispalatsin Scape-sali.
-        Kansallisen audiovisuaalisen instituutin teatteri Orion ja muut toimitilat sijaitsevat nekin pääkaupungissa.
-    </p>
-    <p>
-        Kaupungissa on myös kunnallisia kulttuuripalveluita, esimerkiksi kirjastoja.
+        <p>
+            Monet Suomen keskeiset kulttuurilaitokset sijaitsevat Helsingissä, kuten valtion taidemuseo <a
+                href="https://ateneum.fi/" target="_blank">Ateneum</a>, Suomen Kansallisooppera ja -baletti ja
+            Kansallisarkisto. Teattereista voidaan mainita
+            Kansallisteatteri, Helsingin kaupunginteatteri ja Ruotsalainen teatteri.
+        </p>
         <div class="kuvaosio">
-            <img src="images/hki-kuvat/oodi.JPG" alt="Oodi-kirjasto" class="kultkuvat">
-            <div id="tekstiosa2">
-    <p>
-        Helsingin kaupunginkirjaston
-        pääkirjasto sijaitsee Pasilassa ja vuonna 2018 avattu <a href="https://www.oodihelsinki.fi/" target="_blank">Keskustakirjasto Oodi</a> sijaitsee Kansalaistorilla.
-    </p>
+            <img src="images/hki-kuvat/kiasma.JPG" alt="Kuva Kiasmasta" class="kultkuvat">
+            <div class="tekstiosa">
+                <p>
+                    <a href="https://kiasma.fi/" target="_blank">Kiasma</a> on Helsingin keskustassa sijaitseva
+                    nykytaiteen museo. Kiasma on osa Kansallisgalleriaa.
+
+                    Kiasma esittää, kerää ja tekee tunnetuksi nykytaidetta. Näyttelyiden lisäksi Kiasmassa järjestetään
+                    esityksiä ja tapahtumia
+                </p>
+            </div>
+        </div>
+        <div class="kuvaosio">
+            <img src="images/hki-kuvat/mustalo.JPG" alt="Musiikkitalo" class="kultkuvat">
+            <div class="tekstiosa">
+                <p>
+                    Helsingissä toimii kaksi ammattimaista sinfoniaorkesteria, Helsingin kaupunginorkesteri ja Radion
+                    sinfoniaorkesteri, jotka pitävät konsertteja vuonna 2011 valmistuneessa Musiikkitalossa.
+                </p>
+            </div>
+        </div>
+        <p>
+            Suuria populaarimusiikin keikkoja pidetään Olympiastadionilla, Hartwall-areenassa ja Helsingin jäähallissa.
+            Rock-klubeista tunnetuin on Tavastia-klubi.
+        </p>
+
+        <p>
+            Helsingissä on kymmeniä elokuvasaleja. Suurin elokuvasali on 639 paikkainen Tennispalatsin Scape-sali.
+            Kansallisen audiovisuaalisen instituutin teatteri Orion ja muut toimitilat sijaitsevat nekin pääkaupungissa.
+        </p>
+        <p>
+            Kaupungissa on myös kunnallisia kulttuuripalveluita, esimerkiksi kirjastoja.
+            <div class="kuvaosio">
+                <img src="images/hki-kuvat/oodi.JPG" alt="Oodi-kirjasto" class="kultkuvat">
+                <div class="tekstiosayla">
+        <p>
+            Helsingin kaupunginkirjaston pääkirjasto sijaitsee Pasilassa ja vuonna 2018 avattu <a
+                href="https://www.oodihelsinki.fi/" target="_blank">Keskustakirjasto Oodi</a> sijaitsee
+            Kansalaistorilla.
+        </p>
     </div>
     <p>
         Helsingin kaupungin kulttuuriasiainkeskus hallinnoi Helsingin kulttuurikeskuksia kuten Kanneltaloa ja
         Malmitaloa. Niissä järjestetään vuosittain kymmeniä konsertteja ja muita esityksiä.</p>
     </p>
+
 </div>
 </div>
-<p>Lähde: Wikipedia</p>
+
+<button class="avautuva">Patsaat</button>
+<div class="sisalto">
+    <p>Helsingissä on paljon hienoja patsaita. Tässä muutamia patsaita, joilla on <strong id="patsaita">vaatteet
+        päällä</strong>.</p>
+    <div class="kuvaosio">
+        <img src="images/hki-kuvat/marski.JPG" alt="Kuva Mannerheimin ratsastajapatsaasta" class="kultkuvat">
+        <div class="tekstiosavasen">
+            <p>
+                Mannerheimin ratsastajapatsas on kuvanveistäjä Aimo Tukiaisen veistämä monumentti,
+                jossa Suomen marsalkka Carl Gustaf Emil Mannerheim istuu hevosensa selässä.
+            </p>
+        </div>
+        <p>
+            Patsas paljastettiin 4. kesäkuuta 1960 Mannerheimin syntymäpäivänä. Itse 5,4 metriä korkea pronssinen
+            ratsukko lepää 6,3 metriä korkean ja 6,3 pitkän sekä 2,72 metriä leveän punagraniittisen jalustan päällä, ja
+            niiden yhteiskorkeus on 11,7 metriä. Jalustan sisään on sijoitettu rasia, joka sisältää mikrofilmeille
+            tallennettuna kaikkien patsaskeräykseen osallistuneiden nimet.
+
+
+        </p>
+    </div>
+    <div class="kuvaosio">
+        <img src="images/hki-kuvat/aleksanteri2.JPG" alt="Kuva Aleksanteri II:n patsaasta" class="kultkuvat">
+        <div class="tekstiosavasen">
+            <p>
+                Aleksanteri II on monumentaalinen patsaskokonaisuus, joka sijaitsee Helsingin Senaatintorilla.
+
+            </p>
+        </div>
+        <p>
+            Patsaan päähahmo kuvaa Suomen suuriruhtinas Aleksanteri II:sta pitämässä puhetta kokoonkutsumillaan
+            Helsingin säätyvaltiopäivillä vuonna 1863 Suomen Kaartin upseerin univormussa. Patsaaseen kuuluu neljä
+            allegorista veistosryhmää, jotka esittävät kukin neljää eri hyvettä - Lakia (lat. Lex), Työtä (Labor),
+            Rauhaa (Pax) ja Valoa (Lux). Aleksanterin hahmo on 3,23 metriä korkea, jalustan sivuhahmot
+            2,3-metrisiä. Muistomerkin kokonaiskorkeus on 10,67 metriä.
+
+        </p>
+    </div>
+    <div class="kuvaosio">
+        <img src="images/hki-kuvat/runeberg.JPG" alt="Kuva Runebergin patsaasta" class="kultkuvat">
+        <div class="tekstiosavasen">
+            <p>
+                Johan Ludvig Runebergin muistomerkki Runebergin esplanadilla.
+            </p>
+        </div>
+        <p>
+            Vuosi Runebergin kuoleman jälkeen Säätyjen asettama valtuuskunta
+            tilasi runoilijan Pariisissa työskentelevältä pojalta, kuvanveistäjä Walter Runebergilta,
+            kansallisrunoilijan muistomerkin. Kuvanveistäjän luonnos hyväksyttiin 1882, ja se valettiin pronssiin
+            Pariisissa. Muistomerkissä ei missään mainita, ketä se esittää. Oli
+            itsestään selvää, kenestä oli kysymys. Runebergin patsas paljastettiin suurin juhlallisuuksin 1885,
+            kahdeksan vuotta runoilijan kuoleman jälkeen. Veistoksen kokonaiskorkeus on 8 metriä.
+        </p>
+    </div>
+</div>
+<p>Lähde: <a href="https://fi.wikipedia.org/wiki/Helsinki#Kulttuuri" target="_blank">Wikipedia</a> ja <a
+        href="https://www.hamhelsinki.fi/sculpture/johan-ludvig-runebergin-muistomerkki-walter-runeberg/"
+        target="_blank">HAM</a></p>
 <a href="https://www.myhelsinki.fi/fi/näe-ja-koe/tapahtumat" target="_blank">MyHelsinki tapahtumasivusto</a>
+
 </div>
 <footer>
     <p id="copyright">CSS Miami Productions &#169; 2019</p>
     <a id="tekijat" href="credits.html">Tekijät</a>
     <p id="css-award">
-        <img src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
+        <img src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!"/>
         </a>
     </p>
 </footer>

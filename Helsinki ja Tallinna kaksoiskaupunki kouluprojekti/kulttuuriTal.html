@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="fancybox/dist/jquery.fancybox.min.css">
     <style>
         #kulttuuri {
-            margin-left: 250px;
+            margin-left: 200px;
             margin-right: 50px;
         }
 
@@ -57,7 +57,7 @@
             width: 100%;
         }
 
-        #tekstiosa0 {
+        .tekstiosa {
             position: absolute;
             bottom: 10px;
             right: 50px;
@@ -69,19 +69,7 @@
             max-height: 140px;
         }
 
-        #tekstiosa1 {
-            position: absolute;
-            bottom: 10px;
-            right: 50px;
-            background-color: black;
-            color: white;
-            padding-left: 20px;
-            padding-right: 20px;
-            min-width: 300px;
-            max-height: 120px;
-        }
-
-        #tekstiosa2 {
+        .tekstiosayla {
             position: absolute;
             top: 10px;
             right: 50px;
@@ -91,6 +79,13 @@
             padding-right: 20px;
             min-width: 300px;
             max-height: 120px;
+        }
+        @media only screen and (max-width: 750px) {
+            .tekstiosa, .tekstiosayla {
+                position: static;
+                min-width: 0;
+                max-height: 400px;
+            }
         }
     </style>
 </head>
@@ -162,7 +157,7 @@
 
     <div class="kuvaosio">
         <img src="images/tall-kuvat/aljuarezFlickr.jpg" alt="Kuva Estonia-teatterista" class="kultkuvat">
-        <div id="tekstiosa0">
+        <div class="tekstiosa">
             <p>
                 Rahvusooper Estonia (Estonia pst 4) [kartalla] eli Estonian teatteri on Solaris-ostoskeskuksen vieressä,
                 hyvin lähellä Viru-hotellia sijaitseva oopperatalo. Siellä esitetään oopperan lisäksi operettia,
@@ -185,7 +180,7 @@
         </p>
         <div class="kuvaosio">
             <img src="images/tall-kuvat/guillaume_speurt.jpg" alt="Kuva joulu" class="kultkuvat">
-            <div id="tekstiosa2">
+            <div class="tekstiosayla">
                 <p>
                     Raatihuoneentori (Raekoja plads) on Tallinnan keskusaukio. Joulutori rakennettaan vuosittain valtavan joulukuusen ympärille, ja alue koristellaan jouluvaloilla ja sadoilla joulukoristeilla.
                 </p>
@@ -193,8 +188,7 @@
         </div>
     </div>
     <p>Lähde: <a href="https://www.pienimatkaopas.com/tallinna/tapahtumat.html" target="_blank">Pieni matkaopas</a> ja <a href="https://www.rantapallo.fi/kaupunkilomat/nauti-tunnelmasta-tallinnan-joulumarkkinoilla-5-vinkkia-kavijalle/" target="_blank"> Rantapallo</a></p>
-    <a href="https://www.visittallinn.ee/fin/matkailija/nae-koe/tapahtumat" target="_blank">Visit Tallinn
-        tapahtumasivusto</a>
+    <a href="https://www.visittallinn.ee/fin/matkailija/nae-koe/tapahtumat" target="_blank">Visit Tallinn tapahtumasivusto</a>
 
 </div>
 <footer>

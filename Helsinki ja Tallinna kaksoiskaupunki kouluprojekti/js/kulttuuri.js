@@ -24,6 +24,7 @@ document.getElementById('over18').addEventListener('click', muuta);
 function muuta() {
   if (patka.style.display === 'none') {
     patka.style.display = 'block';
+    play();
     document.getElementById('over18').innerText = 'Piilota video';
   } else {
     patka.style.display = "none";
@@ -34,4 +35,8 @@ function muuta() {
 
 function paussaa() {
   video1.pause();
+}
+function play() {
+  video1.play();
+
 }
