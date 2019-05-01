@@ -10,9 +10,9 @@
     <link href="lightbox/dist/css/lightbox.css" rel="stylesheet">
 </head>
 <style>
-    ul {
+    #sisalto ul {
         display: flex;
-        border: red 1px solid;
+        border: white 10px solid;
         flex-flow: row;
         flex-wrap: wrap;
         list-style-type: none;
@@ -20,16 +20,15 @@
         align-items: center;
     }
 
-    li {
+    #sisalto li {
         display: inline-block;
         vertical-align: middle;
-
+        border: blue 10px solid;
         margin: 50px;
         padding: 10px;
-        border: black 1px solid;
     }
 
-    li img {
+    #sisalto li img {
         vertical-align: middle;
         height: auto;
         display: block;
@@ -56,10 +55,9 @@
     }
 
     #tagit {
-        height: 200px;
+        height: 100px;
         width: 80%;
         margin: auto;
-        background-color: white;
     }
 
     #valinnat {
@@ -91,8 +89,29 @@
     }
 
     #tagi-lista {
+        display: block;
+        text-align: center;
         padding: 0;
-        justify-content: center;
+        height: fit-content;
+        padding: 0;
+        border: 0;
+    }
+
+    #tagi-lista li {
+        height: 20px;
+        padding: 5px;
+        display: block;
+        border: 0;
+        margin: 0;
+    }
+
+    #tagi-lista p {
+        margin: 0;
+    }
+
+    #lisaa-tagit textarea {
+        resize: none;
+        margin-bottom: 10px;
     }
 
 </style>
@@ -129,9 +148,11 @@
 <div id="valinnat">
     <h2>Lisää tagejä</h2>
     <div id="lisaa-tagit">
-        <textarea id="textAreaId" class="tag" rows="1" cols="10"></textarea>
-        <button id="tagId" class="tagi-button">Lisää</button>
+        <textarea id="textAreaId1" class="tag" rows="1" cols="20"></textarea>
+        <textarea id="textAreaId2" class="tag" rows="1" cols="20"></textarea>
+        <textarea id="textAreaId3" class="tag" rows="1" cols="20"></textarea>
     </div>
+    <button id="tagId" class="tagi-button">Lisää tagit</button>
 </div>
 <div id="tagit">
     <ul id="tagi-lista">

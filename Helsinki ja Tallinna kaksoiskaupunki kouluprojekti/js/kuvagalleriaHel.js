@@ -9,6 +9,7 @@ let edellisetSivut = [];
 let korkeinSivuNumero = 1;
 
 let i = 0;
+let yhdistettyTagi = '';
 
 let edellinenSivuButton = document.getElementById('edellinen-sivu');
 let seuraavaSivuButton = document.getElementById('seuraava-sivu');
@@ -23,26 +24,22 @@ haeJSON();
 
 function haeJSON() {
 
-  let yhdistettyTagi = annetutTagit.join();
-
   url = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=648819e8a1b8d9bf86ef0f3a005a4007&tags=helsinki,' +
       yhdistettyTagi +
       '&tag_mode=all&safe_search=1&sort=interestingness-desc&page='
       + sivu +
       '&extras=original_format,o_dims&content_type=1&media=photos&format=json&nojsoncallback=1';
 
+  console.log(url);
+
   fetch(url).then(function(vastaus) {
     return vastaus.json();
   }).then(function(json) {
-    tallennaArrayKuvat(json);
+    paivitaKuvat(json);
   }).catch(function(error) {
     console.log(error);
   });
 
-}
-
-function tallennaArrayKuvat(kuvat) {
-  paivitaKuvat(kuvat);
 }
 
 function paivitaKuvat(kuvat) {
@@ -109,7 +106,6 @@ function seuraavaSivu() {
 
   if (sivu > korkeinSivuNumero) {
     korkeinSivuNumero = sivu;
-    alert('Korkein sivu!');
     edellisetSivut.push(document.getElementById('kuva-lista').innerHTML);
     document.getElementById('kuva-lista').innerHTML = '';
     document.getElementById('helsinki-kuvina').
@@ -124,7 +120,6 @@ function seuraavaSivu() {
 
 function edellinenSivu() {
   if (sivu === korkeinSivuNumero) {
-    alert('Tallennettu!');
     edellisetSivut.push(document.getElementById('kuva-lista').innerHTML);
   }
   sivu--;
@@ -140,55 +135,71 @@ function edellinenSivu() {
 }
 
 function tagiAnnettu() {
-  let annettuTagi = document.getElementById('textAreaId').value;
-  annettuTagi = annettuTagi.replace(/\s/g, '').trim().toLowerCase();
 
-  annetutTagit.push(annettuTagi);
+  tagiButton.removeEventListener('click', tagiAnnettu);
+  tagiButton.addEventListener('click', uusiTagHaku);
 
-  let ul = document.getElementById('tagi-lista');
-  let li = document.createElement('li');
-  let p = document.createElement('p');
-  let pText = document.createTextNode(annettuTagi);
 
-  let button = document.createElement('button');
-  let buttonText = document.createTextNode('Poista');
-  button.class = 'delete-button';
+  yhdistettyTagi = '';
+  console.log(yhdistettyTagi);
+  let annettuTagi = document.getElementById('lisaa-tagit').children;
 
-  p.appendChild(pText);
-  li.appendChild(p);
-  button.appendChild(buttonText);
-  li.appendChild(button);
-  ul.appendChild(li);
-  li.addEventListener('click', function() {
-    poistaTagi(annetutTagit.length - 1);
-  });
+  for (let i = 0; i < 3; i++) {
 
-  document.getElementById('textAreaId').value = '';
-  alert('Tagi lisätty!');
-
-  document.getElementById('kuva-lista').innerHTML = '';
-  document.getElementById('sisalto').style.display = 'block';
-  document.getElementById('virheilmoitus').style.display = 'none';
-
-  haeJSON();
-
-}
-
-function poistaTagi(indeksi) {
-  console.log(indeksi);
-  let uusiArray = [];
-  uusiArray.push('helsinki');
-  console.log(annetutTagit);
-
-  for (let i = 1; i < annetutTagit.length; i++) {
-    if (indeksi !== i) {
-      uusiArray.push(annetutTagit[i]);
+    if (annettuTagi[i].value === '') {
+      annetutTagit[i] = (annettuTagi[i].value);
+      continue;
     } else {
-      console.log(document.getElementsByTagName('li')[i]);
+      annettuTagi[i].value = annettuTagi[i].value.replace(/\s/g, '').
+          trim().
+          toLowerCase();
+      annetutTagit[i] = (annettuTagi[i].value);
+
+      let ul = document.getElementById('tagi-lista');
+      let li = document.createElement('li');
+      let p = document.createElement('p');
+      let pText = document.createTextNode(annettuTagi[i].value);
+
+      p.appendChild(pText);
+      li.appendChild(p);
+      ul.appendChild(li);
+
+      document.getElementById('kuva-lista').innerHTML = '';
+      document.getElementById('sisalto').style.display = 'block';
+      document.getElementById('virheilmoitus').style.display = 'none';
     }
+    yhdistettyTagi = annetutTagit.join();
+    console.log(yhdistettyTagi.length);
   }
 
-  annetutTagit = uusiArray;
-  console.log(uusiArray);
+  if (annetutTagit.length !== 0) {
+    document.getElementById('lisaa-tagit').style.display = 'none';
+    document.getElementById('tagId').innerText = 'Poista annetut tagit';
 
+    haeJSON();
+    alert('Tagit lisätty!');
+  } else if (yhdistettyTagi.length === 0) {
+    alert('Et antanut yhtään tagia!');
+  }
+}
+
+function uusiTagHaku() {
+  tagiButton.removeEventListener('click', uusiTagHaku);
+  tagiButton.addEventListener('click', tagiAnnettu);
+  document.getElementById('lisaa-tagit').style.display = 'block';
+  document.getElementById('virheilmoitus').style.display = 'none';
+
+  document.getElementById('textAreaId1').value = '';
+  document.getElementById('textAreaId2').value = '';
+  document.getElementById('textAreaId3').value = '';
+
+  yhdistettyTagi = '';
+  document.getElementById('kuva-lista').innerHTML = '';
+  document.getElementById('tagi-lista').innerHTML = '';
+
+  document.getElementById('tagId').innerText = 'Lisää tagit';
+  document.getElementById('sisalto').style.display = 'block';
+
+  haeJSON();
+  alert('Tagit poistettu!');
 }
