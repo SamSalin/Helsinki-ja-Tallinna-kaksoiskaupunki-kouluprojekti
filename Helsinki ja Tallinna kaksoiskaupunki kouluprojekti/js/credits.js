@@ -6,6 +6,7 @@ let kimmoKuva = document.getElementById('kimmo-kuva');
 
 let samuliAudio = new Audio();
 let samuliFirst = 0;
+let emilAudio = new Audio();
 let emilFirst = 0;
 let kimmoFirst = 0;
 
@@ -77,6 +78,8 @@ function spin(henkilo) {
     case 'emil':
 
       emilFirst++;
+      emilAudio.src = 'media/audio/emil-audio.mp3';
+      emilAudio.play();
       if(emilFirst === 1) {
         emilKuva.style.transform = "rotate(360deg)";
         setTimeout(rotateEmil, 3000);
