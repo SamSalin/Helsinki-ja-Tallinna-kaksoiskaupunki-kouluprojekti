@@ -18,8 +18,11 @@ for (let i = 0; i < coll.length; i++) {
 
 let patka = document.getElementById('video-container');
 let video1 = document.getElementById('video');
+let linkki = document.getElementById('linkki');
+
 
 document.getElementById('over18').addEventListener('click', muuta);
+linkki.addEventListener('click', paussaa);
 
 function muuta() {
   if (patka.style.display === 'none') {
@@ -38,5 +41,4 @@ function paussaa() {
 }
 function play() {
   video1.play();
-
 }
