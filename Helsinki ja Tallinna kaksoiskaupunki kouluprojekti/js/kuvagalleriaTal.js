@@ -139,7 +139,9 @@ function tagiAnnettu() {
 
   annetutTagit = [];
   yhdistettyTagi = '';
-  let annettuTagi = document.getElementById('lisaa-tagit').children;
+  let annettuTagi = document.getElementById('textareas').children;
+  console.log(annettuTagi);
+
 
   for (let i = 0; i < 3; i++) {
 

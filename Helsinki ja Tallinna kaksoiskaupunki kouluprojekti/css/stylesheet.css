@@ -407,6 +407,10 @@ footer {
     overflow: hidden;
 }
 
+#kuva-lista {
+    padding: 0;
+}
+
 #vaihda-sivua {
     display: flex;
     align-items: center;
@@ -429,6 +433,7 @@ footer {
     height: 100px;
     width: 80%;
     margin: auto;
+    margin-top: 50px;
 }
 
 #valinnat {
@@ -446,8 +451,10 @@ footer {
     margin-right: auto;
 }
 
-#valinnat button {
+#tagId {
     display: block;
+    position: relative;
+    top: 20px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
@@ -479,23 +486,31 @@ footer {
     margin: 0;
 }
 
-#lisaa-tagit textarea {
-    resize: none;
-    margin-bottom: 5px;
+#lisaa-tagit {
+    width: 80%;
+    margin-bottom: 10px;
 }
 
-#tag1 p, #tag2 p, #tag3 p {
-    margin: 0;
-    display:inline-block;
+#labels {
+    display: inline-block;
+    width: 20%;
+    float: left;
 }
 
-#tag1 {
+label {
+    display: inline-block;
+    margin-bottom: 7px;
+}
+
+#textareas {
+    display: inline-block;
+    width: 70%;
     float: right;
 }
 
-.tag {
-    display: inline-block !important;
-    vertical-align: middle
+#lisaa-tagit textarea {
+    resize: none;
+    margin-bottom: 5px;
 }
 
 /* MOBIILIOPTIMOINTI */
@@ -598,5 +613,23 @@ footer {
 
     #luontoreitti-lista-helsinki, #luontoreitti-lista-tallinna {
         float: none !important;
+    }
+
+    /* KUVAGALLERIA */
+
+    #kuva-lista {
+        margin: 10px;
+    }
+
+    #kuva-lista li {
+        margin: 25px;
+        width: fit-content;
+        height: auto;
+    }
+
+    #kuva-lista img {
+        width: 100%;
+        height: auto;
+        margin: 0 !important;
     }
 }

@@ -43,12 +43,19 @@
 <div id="valinnat">
     <h2>Lisää tagejä</h2>
     <div id="lisaa-tagit">
-        <textarea id="textAreaId1" class="tag" rows="1" cols="20"></textarea>
-        <textarea id="textAreaId2" class="tag" rows="1" cols="20"></textarea>
-        <textarea id="textAreaId3" class="tag" rows="1" cols="20"></textarea>
+        <div id="labels">
+            <label for="textAreaId1">Tagi 1</label>
+            <label for="textAreaId2">Tagi 2</label>
+            <label for="textAreaId3">Tagi 3</label>
+        </div>
+        <div id="textareas">
+            <textarea id="textAreaId1" class="tag" rows="1" cols="20"></textarea>
+            <textarea id="textAreaId2" class="tag" rows="1" cols="20"></textarea>
+            <textarea id="textAreaId3" class="tag" rows="1" cols="20"></textarea>
+        </div>
     </div>
-    <button id="tagId" class="tagi-button">Lisää tagit</button>
 </div>
+<button id="tagId" class="tagi-button">Lisää tagit</button>
 <div id="tagit">
     <ul id="tagi-lista">
 
