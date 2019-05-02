@@ -78,6 +78,7 @@ function spin(henkilo) {
     case 'emil':
 
       emilFirst++;
+      console.log(emilFirst);
       emilAudio.src = 'media/audio/emil-audio.mp3';
       emilAudio.play();
       if(emilFirst === 1) {
