@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tietoa meistä</title>
+    <title>Helsinki kuvina</title>
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
     <link rel="stylesheet" href="css/menusheet.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="lightbox/dist/css/lightbox.css" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -16,13 +17,11 @@
     <div id="saa">
         <script src="https://www.yr.no/place/Finland/Southern_Finland/Helsinki/external_box_stripe.js"></script>
         <noscript><a href="https://www.yr.no/place/Finland/Southern_Finland/Helsinki/">yr.no: Forecast for Helsinki</a></noscript>
-        <script src="https://www.yr.no/place/Estland/Harjumaa/Tallinn/external_box_stripe.js"></script>
-        <noscript><a href="https://www.yr.no/place/Estland/Harjumaa/Tallinn/">yr.no: Forecast for Api</a></noscript>
     </div>
-    <a href="credits.html">
+    <a href="kuvagalleriaTal.html">
         <img id="logo2" class="logot" src="images/logot/tallinn_logo.png" alt="Tallinnan-logo">
     </a>
-    <a href="credits.html">
+    <a href="kuvagalleriaHel.html">
         <img id="logo1" class="logot" src="images/logot/helsinki_logo.png" alt="Helsingin logo">
     </a>
     <img id="header-image" src="images/header-img-uusi.jpg" alt="header-kuva"/>
@@ -38,47 +37,51 @@
 </div>
 <span id="pc" style="font-size:30px;cursor:pointer;color:white" onclick="openNav()">&#9776; Valikko </span>
 <span id="mobile" style="display: none ;font-size:30px;cursor:pointer;color:white;position: fixed; top: 0; left: 0; margin: 5px" onclick="openNav()">&#9776; </span>
-<div id="tekijat-otsikko">
-    <h1>Tekijät</h1>
+<div id="helsinki-kuvina">
+    <h1>Helsinki kuvina</h1>
 </div>
-<div id="tarina">
-    <p>CSS Miami syntyi <i>unelmasta</i>. Unelmasta tehdä jotakin suurta. Valittettavasti suuruus ei tule itsestään vaan se tarvitsee kivenkovia tekijöitä. Onneksi nämä tekijät löysivät toisensa
-        pääkaupunkiseudun melskeestä.</p><br/>
-
-    <p>Mitä CSS Miami tarkoittaa? Se tarkoittaa irtiottoa arjesta. Se tarkoittaa itsensä likoon pistämistä joka päivä, joka tunti, joka sekunti. Se tarkoittaa sammumatonta tiedonnälkää. Se
-        tarkoittaa <b>voittamista.</b></p><br/>
-
-    <p>Vakuutamme, että CSS Miami ei ole pyramidihuijaus* vaan jotain aivan uutta.</p>
-
-</div>
-<div id="leipateksti">
-    <h2>Tämän sivuston ovat ylpeänä luoneet:</h2>
-</div>
-<div id="kuvat">
-    <div id="samuli-div">
-        <img id="samuli-kuva" src="images/muotokuvat/samuli.png" alt="Kuva ylijumalasta n. 1"/>
-        <h2 class="kuvateksti">Ylijumala Samuli</h2>
+<div id="valinnat">
+    <h2>Lisää tagejä</h2>
+    <div id="lisaa-tagit">
+        <textarea id="textAreaId1" class="tag" rows="1" cols="20"></textarea>
+        <textarea id="textAreaId2" class="tag" rows="1" cols="20"></textarea>
+        <textarea id="textAreaId3" class="tag" rows="1" cols="20"></textarea>
     </div>
-    <div id="emil-div">
-        <img id="emil-kuva" src="images/muotokuvat/emil.png" alt="Kuva ylijumalasta n. 2"/>
-        <h2 class="kuvateksti">Ylijumala Emil</h2>
+    <button id="tagId" class="tagi-button">Lisää tagit</button>
+</div>
+<div id="tagit">
+    <ul id="tagi-lista">
+
+    </ul>
+</div>
+<div id="virheilmoitus">
+
+</div>
+<div id="sisalto">
+    <div id="slideshow">
+
     </div>
-    <div id="kimmo-div">
-        <img id="kimmo-kuva" src="images/muotokuvat/kimmo2-edited.png" alt="Kuva ylijumalasta n. 3"/>
-        <h2 class="kuvateksti">Ylijumala Kimmo</h2>
+    <div id="kuvagalleria">
+        <ul id="kuva-lista">
+
+        </ul>
+    </div>
+    <div id="vaihda-sivua">
+        <button id="edellinen-sivu" type="button">Edellinen sivu</button>
+        <button id="seuraava-sivu" type="button">Seuraava sivu</button>
     </div>
 </div>
-<p id="ei-huijaus"><q>Pyramidihuijaus on laitonta rahankeräystä, joka toteutetaan ketjukirjeeseen tai verkostomarkkinointiin verrattavalla tavalla.</q> Me emme ole niin kehittyneitä.</p>
 <footer>
     <p id="copyright">CSS Miami Productions &#169; 2019</p>
     <a id="tekijat" href="credits.html">Tekijät</a>
     <p id="css-award">
-            <img src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
+        <img src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!"/>
         </a>
     </p>
 </footer>
-<script src="js/menuscript.js"></script>
 <script src="js/valikot.js"></script>
-<script src="js/credits.js"></script>
+<script src="js/menuscript.js"></script>
+<script src="lightbox/dist/js/lightbox-plus-jquery.js"></script>
+<script src="js/kuvagalleriaHel.js"></script>
 </body>
 </html>
