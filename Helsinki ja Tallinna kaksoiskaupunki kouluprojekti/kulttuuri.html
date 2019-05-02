@@ -9,8 +9,27 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="fancybox/dist/jquery.fancybox.min.css">
     <style>
+
+        h2 {
+            text-align: center;
+        }
+
+        #button-div {
+            text-align: center;
+        }
+
+        #video-container {
+            display: none;
+            margin: auto;
+            width: fit-content;
+        }
+
+        #video-container p {
+            text-align: center;
+        }
+
         #kulttuuri {
-            margin-left: 150px;
+            margin-left: 50px;
             margin-right: 50px;
         }
 
@@ -39,10 +58,6 @@
             width: 100%;
             outline: none;
             font-size: 20px;
-        }
-
-        #video-container {
-            display: none;
         }
 
         .sisalto {
@@ -119,6 +134,15 @@
                 margin-left: 20px;
                 margin-right: 20px;
             }
+
+            #video-container {
+                width: 80%;
+            }
+
+            #video {
+                height: 60%;
+                width: 100% !important;
+            }
         }
     </style>
 </head>
@@ -157,7 +181,9 @@
 <div id="kulttuuri">
     <h1>Helsingin kulttuuri</h1>
     <h2>Suomalaisuus on lahja</h2>
-    <button id="over18">Oletko yli 18? Paina nappia jos haluat videon!</button>
+    <div id="button-div">
+        <button id="over18">Oletko yli 18? Paina nappia jos haluat videon!</button>
+    </div>
     <br><br>
     <div id="video-container">
         <div id="video-formaatit">
