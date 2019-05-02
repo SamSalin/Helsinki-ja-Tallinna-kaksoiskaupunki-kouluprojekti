@@ -30,6 +30,8 @@ function haeJSON() {
       + sivu +
       '&extras=original_format,o_dims&content_type=1&media=photos&format=json&nojsoncallback=1';
 
+  console.log(url);
+
 
   fetch(url).then(function(vastaus) {
     return vastaus.json();
@@ -135,10 +137,13 @@ function edellinenSivu() {
 
 function tagiAnnettu() {
 
+  annetutTagit = [];
   yhdistettyTagi = '';
   let annettuTagi = document.getElementById('lisaa-tagit').children;
 
   for (let i = 0; i < 3; i++) {
+
+    console.log(annettuTagi[i].value);
 
     if (annettuTagi[i].value === '') {
       annetutTagit[i] = (annettuTagi[i].value);
