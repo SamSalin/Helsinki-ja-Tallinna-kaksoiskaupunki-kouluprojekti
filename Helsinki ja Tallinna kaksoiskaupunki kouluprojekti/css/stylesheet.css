@@ -433,7 +433,11 @@ footer {
     height: 100px;
     width: 80%;
     margin: auto;
-    margin-top: 50px;
+}
+
+#button-div {
+    position: absolute;
+    width: 100%;
 }
 
 #valinnat {
@@ -453,10 +457,10 @@ footer {
 
 #tagId {
     display: block;
-    position: relative;
     top: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    left: 0;
+    right: 0;
+    margin: auto;
     margin-top: 20px;
 
     font-size: 20px;
