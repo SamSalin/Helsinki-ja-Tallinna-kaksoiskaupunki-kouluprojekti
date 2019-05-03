@@ -438,6 +438,7 @@ footer {
 #valinnat {
     width: fit-content;
     margin: auto;
+    height: 150px;
 }
 
 #valinnat h2 {
@@ -506,7 +507,11 @@ label {
     margin-bottom: 5px;
 }
 
-
+#buttonDiv {
+    height: 30px;
+    width: fit-content;
+    margin: 0 auto
+}
 /* MOBIILIOPTIMOINTI */
 
 @media only screen and (max-width: 700px) {
