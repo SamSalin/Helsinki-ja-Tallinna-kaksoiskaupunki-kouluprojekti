@@ -118,7 +118,7 @@ function suodataKaupungit() {
 
   document.getElementById('luontoreitti-lista-helsinki').innerHTML = '';
   document.getElementById('luontoreitti-lista-tallinna').innerHTML = '';
-  document.getElementById('loydetyt-luontoreitit').style.display = 'block';
+  document.getElementById('loydetyt-luontoreitit').style.display = 'flex';
 
   let helsinkiNappiValittu = document.getElementById('helsinki-nappi').checked;
   let tallinnaNappiValittu = document.getElementById('tallinna-nappi').checked;
@@ -145,6 +145,8 @@ function suodataKaupungit() {
 // Tulostetaan Helsingin kaupungin luontoreiteistä lista
 
 function tulostaHelsinginLuontoreitit() {
+
+  document.getElementById('luontoreitti-lista-helsinki').style.width = '50%';
 
   let otsikko = document.getElementById('luontoreitti-lista-helsinki');
   let li = document.createElement('li');
@@ -176,6 +178,8 @@ function tulostaHelsinginLuontoreitit() {
 // Tulostetaan Tallinnan kaupungin luontoreiteistä lista
 
 function tulostaTallinnanLuontoreitit() {
+
+  document.getElementById('luontoreitti-lista-tallinna').style.width = '50%';
 
   let otsikko = document.getElementById('luontoreitti-lista-tallinna');
   let li = document.createElement('li');
@@ -305,6 +309,12 @@ function lisaaLuontoReittiTallinna(indeksi) {
 }
 
 function uusiHaku() {
+
+
+  document.getElementById('luontoreitti-lista-helsinki').style.width = '0';
+  document.getElementById('luontoreitti-lista-tallinna').style.width = '0';
+
+
   document.getElementById('map-filter-valinnat').style.display = 'block';
   hakuNappi.removeEventListener('click', uusiHaku);
   hakuNappi.addEventListener('click', suodataKaupungit);

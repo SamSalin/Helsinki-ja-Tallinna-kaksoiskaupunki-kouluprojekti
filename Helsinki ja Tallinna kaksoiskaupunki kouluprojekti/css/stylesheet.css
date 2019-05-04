@@ -261,6 +261,9 @@ footer {
     right: 0;
     margin: auto;
     display: none;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
 }
 
 #loydetyt-luontoreitit h2 {
@@ -279,12 +282,13 @@ footer {
 }
 
 #luontoreitti-lista-helsinki, #luontoreitti-lista-tallinna {
-    display: block;
-    height: 400px;
+    width: 0;
     font-size: 20px;
     text-align: center;
     list-style-type: none;
     padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
 }
 
 #luontoreitti-lista-helsinki li, #luontoreitti-lista-tallinna li {
@@ -629,7 +633,7 @@ label {
     }
 
     #luontoreitti-lista-helsinki, #luontoreitti-lista-tallinna {
-        width: 100%;
+        width: 100% !important;
     }
 
     /* KUVAGALLERIA */
