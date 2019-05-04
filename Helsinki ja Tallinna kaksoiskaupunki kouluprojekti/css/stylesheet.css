@@ -279,10 +279,7 @@ footer {
 }
 
 #luontoreitti-lista-helsinki, #luontoreitti-lista-tallinna {
-    display: inline-grid;
-    display: -moz-inline-grid;
-    display: -ms-inline-grid;
-    width: 49%;
+    display: block;
     height: 400px;
     font-size: 20px;
     text-align: center;
