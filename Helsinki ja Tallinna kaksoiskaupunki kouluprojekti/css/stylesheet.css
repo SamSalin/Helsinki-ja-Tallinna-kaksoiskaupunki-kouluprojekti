@@ -221,7 +221,7 @@ footer {
 
 #mapid {
     height: 500px;
-    width: 50%;
+    width: 600px;
     left: 0;
     right: 0;
     margin: auto;
@@ -256,7 +256,7 @@ footer {
 }
 
 #loydetyt-luontoreitit {
-    width: 700px;
+    width: 600px;
     left: 0;
     right: 0;
     margin: auto;
@@ -279,6 +279,11 @@ footer {
 }
 
 #luontoreitti-lista-helsinki, #luontoreitti-lista-tallinna {
+    display: inline-grid;
+    display: -moz-inline-grid;
+    display: -ms-inline-grid;
+    width: 49%;
+    height: 400px;
     font-size: 20px;
     text-align: center;
     list-style-type: none;
@@ -514,6 +519,22 @@ label {
 }
 /* MOBIILIOPTIMOINTI */
 
+
+@media only screen and (max-width: 900px) {
+
+    #samuli-div {
+        width: 100%;
+    }
+
+    #emil-div {
+        width: 100%;
+    }
+
+    #kimmo-div {
+        width: 100%;
+    }
+}
+
 @media only screen and (max-width: 700px) {
 
     #logo1 {
@@ -611,7 +632,7 @@ label {
     }
 
     #luontoreitti-lista-helsinki, #luontoreitti-lista-tallinna {
-        float: none !important;
+        width: 100%;
     }
 
     /* KUVAGALLERIA */

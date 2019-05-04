@@ -124,10 +124,6 @@ function suodataKaupungit() {
   let tallinnaNappiValittu = document.getElementById('tallinna-nappi').checked;
 
   if ((helsinkiNappiValittu === true) && (tallinnaNappiValittu === true)) {
-    document.getElementById(
-        'luontoreitti-lista-helsinki').style.cssFloat = 'left';
-    document.getElementById(
-        'luontoreitti-lista-tallinna').style.cssFloat = 'right';
 
     tulostaHelsinginLuontoreitit();
     tulostaTallinnanLuontoreitit();
@@ -313,11 +309,6 @@ function uusiHaku() {
   hakuNappi.removeEventListener('click', uusiHaku);
   hakuNappi.addEventListener('click', suodataKaupungit);
   hakuNappi.innerText = 'Päivitä';
-
-  document.getElementById(
-      'luontoreitti-lista-helsinki').style.cssFloat = 'none';
-  document.getElementById(
-      'luontoreitti-lista-tallinna').style.cssFloat = 'none';
 
   merkkiryhmä.clearLayers();
 
