@@ -35,11 +35,12 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
+    height: 600px;
 }
 
 .history-text-item {
-    width: 500px;
-    height: 250px;
+    width: 800px;
+    height: fit-content;
     margin-top: 0;
     padding-top: 0;
     margin-left: auto;
@@ -63,11 +64,15 @@
     background-color: rgba(211, 211, 211, 0.5);
     left: 0;
     right: 0;
-    bottom: -300px;
+    bottom: -100px;
     margin: auto;
     display: block;
     text-align: center;
     width: fit-content;
+}
+
+footer {
+    margin-top: 100px;
 }
 
 /* MOBIILI OPTIMOINTI */
@@ -85,6 +90,18 @@
         width: 90%;
         height: fit-content;
     }
+
+    .history-texts {
+        height: 540px;
+    }
+
+    footer {
+        margin-top: 100px;
+    }
+
+    #hist-references {
+        bottom: -100px;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -100,6 +117,10 @@
         height: auto;
     }
 
+    .history-texts {
+        height: 405px;
+    }
+
     .history-text-item {
         width: 90%;
         height: fit-content;
@@ -113,6 +134,15 @@
     #tallinn-slider-text, #helsinki-slider-text {
         font-size: 10px;
     }
+}
 
+@media only screen and (max-width: 400px) {
 
+    .history-texts {
+        height: 270px;
+    }
+
+    #historia-container {
+        position: relative;
+    }
 }
