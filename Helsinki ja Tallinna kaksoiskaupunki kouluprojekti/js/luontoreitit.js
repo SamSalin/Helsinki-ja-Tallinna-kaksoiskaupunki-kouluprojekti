@@ -173,6 +173,9 @@ function tulostaHelsinginLuontoreitit() {
       lisaaLuontoReittiHelsinki(i);
     });
   }
+
+  document.getElementById('luontoreitti-lista-helsinki').
+      scrollIntoView({behavior: 'smooth', block: 'center'});
 }
 
 // Tulostetaan Tallinnan kaupungin luontoreiteistä lista
@@ -206,6 +209,9 @@ function tulostaTallinnanLuontoreitit() {
       lisaaLuontoReittiTallinna(i);
     });
   }
+
+  document.getElementById('luontoreitti-lista-tallinna').
+      scrollIntoView({behavior: 'smooth', block: 'center'});
 }
 
 // Lisätään valittuu Helsingin luontoreitti kartalle
