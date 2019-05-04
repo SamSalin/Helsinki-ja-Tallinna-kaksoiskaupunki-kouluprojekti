@@ -8,6 +8,7 @@ let samuliAudio = new Audio();
 let samuliFirst = 0;
 let emilAudio = new Audio();
 let emilFirst = 0;
+let kimmoAudio = new Audio();
 let kimmoFirst = 0;
 
 samuliKuva.addEventListener('click', function(){
@@ -90,6 +91,8 @@ function spin(henkilo) {
     case 'kimmo':
 
       kimmoFirst++;
+      kimmoAudio.src = 'media/audio/kimmo.wav';
+      kimmoAudio.play();
       if(kimmoFirst === 1) {
         kimmoKuva.style.transform = "rotate(360deg)";
         setTimeout(rotateKimmo, 3000);

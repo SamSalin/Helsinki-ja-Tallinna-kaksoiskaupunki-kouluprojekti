@@ -175,7 +175,7 @@ function tagiAnnettu() {
   if (annetutTagit[0] === '' && annetutTagit[1] === '' && annetutTagit[2] === '') {
     alert('Et antanut tageja!')
   } else if (annetutTagit.length !== 0) {
-    document.getElementById('lisaa-tagit').style.display = 'none';
+    document.getElementById('valinnat').style.display = 'none';
     document.getElementById('tagId').innerText = 'Poista annetut tagit';
 
     tagiButton.removeEventListener('click', tagiAnnettu);
@@ -189,7 +189,7 @@ function tagiAnnettu() {
 function uusiTagHaku() {
   tagiButton.removeEventListener('click', uusiTagHaku);
   tagiButton.addEventListener('click', tagiAnnettu);
-  document.getElementById('lisaa-tagit').style.display = 'block';
+  document.getElementById('valinnat').style.display = 'block';
   document.getElementById('virheilmoitus').style.display = 'none';
 
   document.getElementById('textAreaId1').value = '';
