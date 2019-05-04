@@ -381,9 +381,10 @@ footer {
 
 /* KUVAGALLERIA */
 
+
 #sisalto ul {
     display: flex;
-    border: white 10px solid;
+    border: white 5px solid;
     flex-flow: row;
     flex-wrap: wrap;
     list-style-type: none;
@@ -394,7 +395,7 @@ footer {
 #sisalto li {
     display: inline-block;
     vertical-align: middle;
-    border: blue 10px solid;
+    border: black 5px solid;
     margin: 50px;
     padding: 10px;
 }
@@ -408,6 +409,7 @@ footer {
 }
 
 #kuva-lista {
+    margin: 20px;
     padding: 0;
 }
 
@@ -432,8 +434,7 @@ footer {
 #tagit {
     height: 100px;
     width: 80%;
-    margin: auto;
-    margin-top: 50px;
+    margin: 50px auto auto;
 }
 
 #valinnat {
@@ -581,13 +582,13 @@ label {
     }
 
     #copyright {
-        font-size: 20px;
+        font-size: 15px;
         margin-bottom: 5px;
     }
 
     #css-award {
-        width:66px;
-        height:20px;
+        width:44px;
+        height:14px;
     }
 
     /* NELIÖMENU */
@@ -622,7 +623,7 @@ label {
     }
 
     #kuva-lista li {
-        margin: 25px;
+        margin: 10px;
         width: fit-content;
         height: auto;
     }

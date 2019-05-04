@@ -42,6 +42,8 @@
     height: 250px;
     margin-top: 0;
     padding-top: 0;
+    margin-left: auto;
+    margin-right: auto;
     background-color: rgba(211, 211, 211, 0.5);
     text-align: center;
 }
@@ -73,10 +75,15 @@
 @media only screen and (max-width: 800px) {
 
     #hist-img {
-        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
         height: auto;
-        margin-left: 10px;
-        margin-right: 10px;
+    }
+
+    .history-text-item {
+        width: 90%;
+        height: fit-content;
     }
 }
 
@@ -87,17 +94,24 @@
     }
 
     #hist-img {
-        margin-left: 10px;
-        margin-right: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        height: auto;
     }
 
     .history-text-item {
-        width: 500px;
-        height: 250px;
+        width: 90%;
+        height: fit-content;
     }
 
     #hist-references {
         bottom: -100px;
+    }
+
+
+    #tallinn-slider-text, #helsinki-slider-text {
+        font-size: 10px;
     }
 
 
