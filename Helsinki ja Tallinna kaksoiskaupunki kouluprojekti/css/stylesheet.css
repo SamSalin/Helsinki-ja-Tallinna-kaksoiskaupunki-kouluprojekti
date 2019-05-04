@@ -551,10 +551,15 @@ label {
 
     #mobile {
         display: block !important;
+        z-index: 1;
     }
 
     #pc {
         display: none !important;
+    }
+
+    body {
+        margin: 0 auto;
     }
 
     /* HEADER */
@@ -563,10 +568,6 @@ label {
         text-align: center;
         font-size: 20px;
         margin: auto;
-    }
-
-    header {
-        min-width: 200px;
     }
 
     #header-image {

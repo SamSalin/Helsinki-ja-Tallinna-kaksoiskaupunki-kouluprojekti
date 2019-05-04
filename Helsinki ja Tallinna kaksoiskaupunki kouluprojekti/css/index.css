@@ -83,7 +83,8 @@ iframe {
     }
 
     #helsinki-vaakuna {
-        width: 50%;
+        height: 200px;
+        width: auto;
         float: left;
         top: 350px;
         left: 0;
@@ -93,10 +94,24 @@ iframe {
 
     #tallinna-vaakuna {
         float: left;
-        width: 60%;
-        top: 700px;
+        height: 250px;
+        width: auto;
+        top: 570px;
         left: 0;
         right: 0;
         margin: auto;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+
+    #helsinki-vaakuna {
+        top: 350px;
+        height: 150px;
+    }
+
+    #tallinna-vaakuna {
+        top: 525px;
+        height: 180px;
     }
 }
