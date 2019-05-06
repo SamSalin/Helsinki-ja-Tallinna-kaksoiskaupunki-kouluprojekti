@@ -388,7 +388,7 @@ footer {
 
 #sisalto ul {
     display: flex;
-    border: white 5px solid;
+    border: black 5px solid;
     flex-flow: row;
     flex-wrap: wrap;
     list-style-type: none;
